@@ -1,0 +1,4 @@
+<?php
+
+wwww
+	header('Location: http://www.loysmarthome.com');
