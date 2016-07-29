@@ -1,0 +1,48 @@
+<nav class="navbar-fixed-top">
+<nav class="top-header">
+	<div class="container">
+        <div class="row">
+            <div class="col-xs-5  left_top" >
+                <a href="#"><img src="/skin/img/logo.png" alt=""></a>
+            </div>
+            <div class="col-xs-7 top-header-right">
+                  <!--<span>Welcome!</span>-->
+				  <span class="Welcome"><img src="skin/img/Welcome.png"></span>
+				  <?php 
+				  if(!$_SESSION['wUseID']){
+				  ?>
+                  <a href="http://<?php echo syExt('REG_URL');?>/?l=zh-cn">登录</a>
+                  <span>|</span>
+                  <a href="http://<?php echo syExt('REG_URL');?>/index.php/Login/?l=zh-cn">注册</a>
+				  <?php } else{?>
+				  			<a href="http://<?php echo syExt('REG_URL');?>/index.php/User/?l=zh-cn" class="username"><?php echo $_SESSION['wUseID']; ?></a>
+						    <a href="http://<?php echo syExt('REG_URL');?>/index.php/User/out/?l=zh-cn" class="logout">退出</a>
+				  <?php }?>
+		    	  <a class="btn-sm langw" href="http://<?php echo syExt('HOST_URL');?>/?l=zh-cn">中 文</a>
+	              <a class="btn-sm" href="http://<?php echo syExt('HOST_ENURL');?>/?l=en-us">E N</a>
+
+            </div>
+        </div>
+	</div>
+</nav>
+
+<nav class="top-header-tow">
+    <div class="container" style="clear:both;">
+        <div class="row" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+            <div class="col-xs-12"  style="padding:0;">
+                <ul>
+	                 <li class="dropdown"><a  class="active" href="http://<?php echo syExt('HOST_URL');?>/?l=zh-cn"><div class="main-cn">首页</div><div class="main-en">Home</div></a></li>
+			         {loop table="classtype" mshow="1" limit="7"}
+			         <li class="dropdown" ><a href="{$v['url']}" {if($type['tid']==$v['tid'])} class="active"{/if}><div class="main-cn">{$v['classname']}</div><div class="main-en">{$v['description']}</div></a></li>
+			         {/loop}
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+</nav>

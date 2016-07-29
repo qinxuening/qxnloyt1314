@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+	<link rel="stylesheet" href="skin/css/style.css">
+    <link rel="stylesheet" href="skin/css/about.css">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=56vnitTNRp6WwAGFpEu21p4p"></script>
+
+</head>
+<body>
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="about">
+    <div class="pic">
+       
+    </div>
+    <div class="about-content">
+       <div class="container">
+        <div class="head">
+            <h2>公司简介</h2>
+			<h3><img src="/skin/img/Company Profile.png"></h3>
+        </div>
+        <div class="about-content-body">
+			{$type['body']}
+        </div>
+    </div>
+ </div>
+ 
+ <div class="about-connect">
+     <div class="container">
+         <div class="head">
+             <h2>联系我们</h2>
+			 <h3><img src="/skin/img/Contact us.png"></h3>
+         </div>
+         <div class="row">
+             <div class="col-xs-6">
+             	<div class="contact-img">
+ 					<img src="/skin/img/contact-img.png">
+				</div>
+             </div>
+             <div class="col-xs-6" style="padding-left:0;padding-top:20px;">
+        
+                    <!--百度地图容器-->
+                    <div style="height: 260px;width:480px; border: #ccc solid 1px; font-size: 12px;padding:0;"id="map">
+                    </div>
+              
+             </div>
+         </div>
+     </div>
+ </div>
+  <div class="clear-none"></div>  
+</div>
+
+
+{include="footer.html"}
+<script type="text/javascript">
+       //创建和初始化地图函数：
+        function initMap() {
+            createMap(); //创建地图
+            setMapEvent(); //设置地图事件
+            addMapControl(); //向地图添加控件
+            addMapOverlay(); //向地图添加覆盖物
+        }
+        function createMap() {
+            map = new BMap.Map("map");
+            map.centerAndZoom(new BMap.Point(113.872544, 22.574003), 20);
+        }
+        function setMapEvent() {
+            map.enableScrollWheelZoom();
+            map.enableKeyboard();
+            map.enableDragging();
+            map.enableDoubleClickZoom()
+        }
+        function addClickHandler(target, window) {
+            target.addEventListener("click", function () {
+                target.openInfoWindow(window);
+            });
+        }
+        function addMapOverlay() {
+            var markers = [
+        { content: "深圳市宝安区西乡街道宝源路名优工业产品展示采购中心B座一区410", title: "来诚科技", imageOffset: { width: 0, height: 3 }, position: { lat: 22.574003, lng: 113.872544} }
+      ];
+            for (var index = 0; index < markers.length; index++) {
+                var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+                var marker = new BMap.Marker(point, { icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap//images/icon.png", new BMap.Size(20, 25), {
+                    imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+                })
+                });
+                var label = new BMap.Label(markers[index].title, { offset: new BMap.Size(25, 5) });
+                var opts = {
+                    width: 200,
+                    title: markers[index].title,
+                    enableMessage: false
+                };
+                var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+                marker.setLabel(label);
+                addClickHandler(marker, infoWindow);
+                map.addOverlay(marker);
+            };
+        }
+        //向地图添加控件
+        function addMapControl() {
+            var scaleControl = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+            map.addControl(scaleControl);
+            var navControl = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+            map.addControl(navControl);
+            var overviewControl = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: true });
+            map.addControl(overviewControl);
+        }
+        var map;
+        initMap();
+
+    
+    
+	// //设置垂直居中
+	// $('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+	// $(window).resize(function () {
+	// 	var $height = $('.carousel-inner img').eq(0).height() || 
+	// 				  $('.carousel-inner img').eq(1).height() || 
+	// 				  $('.carousel-inner img').eq(2).height();
+	// 	$('.carousel-control').css('line-height', $height + 'px');
+	// });
+
+	//设置文字垂直居中，谷歌浏览器加载图片的顺序问题，导致高度无法获取
+	$(window).load(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+	
+
+	$(window).resize(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+
+	$(window).load(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+	$(window).resize(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+</script>
+</body>
+</html>

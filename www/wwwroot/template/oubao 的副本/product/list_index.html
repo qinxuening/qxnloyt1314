@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+<link rel="stylesheet" type="text/css" href="/skin/css/typo.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/frame.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/style.css"/>
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<!--[if lte IE 8]> 
+<script src="/skin/js/ie.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/ie.css"/>
+ <![endif]-->
+<script src="/skin/js/jquery1.42.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style>
+	.album{
+		width:800px;
+		height:300px;
+		/*background:#ccc;*/
+		margin:195px 0 0 110px;
+	}
+	.album li{
+		display: inline-block;
+	    width: 3px;
+	    height: 25px;
+	    background: #29bce8;
+	    border-radius: 1px;
+	    position: relative;
+		margin:1px 5px 0 0;
+	}
+</style>
+<body>
+{include="head.html"}
+<div class="container download">
+	    <div class="wapper">
+	    <!--<img class="catoheaderpic" src="/skin/img/download_header.jpg">-->
+	    	<h2>下载<br /><span>DOWNLOAD</span></h2>
+        <p id="crumb"><a href="/">首页</a> > 下载</p>
+		 {loop table="product" tid="25" limit="1"} 
+        <table border="0" cellspacing="0" cellpadding="0">
+        	<tr>
+        	  <td>
+        	    <div class="download-item">
+        	    	<img src="/skin/img/app_icon.png" alt="O-HOME"/>
+                <p>{$v['title']}</p>
+                <ul>
+                  <li>最新版本：{$v['versionName']}</li>
+                  <li>大小：{$v['size']}</li>
+                  <li>支持系统：{$v['system']}</li>
+                  <li>更新日期：{fun date('Y-m-d',$v['addtime'])}</li>
+                </ul>
+        	    </div><br />
+        	    <div class="download-item left_qi">
+        	    <a  href="javascript:void(0)" class="qrcode android"><img src="/skin/img/dwn_androidl.png"/><img class="qrpic" src="{$v['androidcode']}"/></a><a href="javascript:void(0)" class="qrcode android"><img src="/skin/img/dwn_androidr.png"/><img class="qrpic" src="{$v['androidcode']}"/></a>
+        	    </div>
+        	  </td>
+        	  <td>
+        	    <div class="download-item">
+        	    	<img src="/skin/img/app_icon.png" alt="O-HOME"/>
+                <p>{$v['fileName']}</p>
+                <ul>
+                  <li>最新版本：{$v['iosbanben']} </li>
+                  <li>大小：{$v['iosbig']}</li>
+                  <li>支持系统：{$v['iossys']}</li>
+                  <li>更新日期：{fun date('Y-m-d',$v['addtime'])}</li>
+                </ul>
+        	    </div><br />
+        	    <div class="download-item right_qi">
+              <a href="javascript:void(0)" class="qrcode ios"><img src="/skin/img/dwn_iosl.png"/><img class="qrpic" src="{$v['applecode']}"/></a><a href="javascript:void(0)" class="qrcode ios"><img src="/skin/img/dwn_iosr.png"/><img class="qrpic" src="{$v['applecode']}"/></a>
+              </div>
+        	  </td>
+        	</tr>
+        </table>
+        <h3 style="width:800px;margin-left:120px;"><i></i>产品说明书下载</h3>
+        {$v['body']}
+		{/loop}
+		    <div class="sms_con">
+                <div class="tb1">
+                    	<div class="bc0" style="width:800px;margin-left:120px;">
+                        	{loop table="product" tid="38"  limit="20"}
+								{if($v['id']!=38)}
+                            		<a class="link10" href="{$v['wendang']}" >{$v['title']}</a>
+								{/if}
+                            {/loop}
+                        </div>
+                </div>
+            </div>
+		<div class="album">
+			<h3 ><li></li>画册下载</h3>
+			<span>
+				{loop table="product" tid="38" id=38 limit="20"}
+					<a  style="margin:-5px 0 15px 10px !important;" class="link10" href="{$v['wendang']}" >{$v['title']}</a></span>	
+				{/loop}		
+		</div>
+	    </div>
+	  </div>
+	 <!--<h3 style="width:800px;margin-left:120px;"><i></i>画册下载</h3>-->
+{include="bottom.html"}
+<script src="/skin/js/Validform.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	var demo=$("#feedback").Validform({
+		tiptype:3,
+		showAllError:true,
+		datatype:{
+			"z3-16":/^[\w+]{3,16}$/,
+			//
+		},
+		ajaxPost:false
+	});
+})
+</script>
+</body>
+</html>

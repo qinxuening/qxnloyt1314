@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+<apkInfo >
+	<versionCode>27</versionCode>
+	<versionName>V1.0.0.27</versionName>
+	<minVersionCode>1</minVersionCode>
+	<updateInfo><info>1.sj</info>
+<info>2.安卓更新</info></updateInfo>
+	<downloadUrl><![CDATA[http://www.loysmarthom.com/download/new/ob-home.apk]]></downloadUrl>
+	<fileName>O-Home.apk</fileName>
+</apkInfo></root>

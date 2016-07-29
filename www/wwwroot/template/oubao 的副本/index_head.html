@@ -1,0 +1,40 @@
+		<div class="language_box" id="lang_box">
+		<div class="btn1" >Language</div>
+		<a class="btn2" href="http://www.loysmarthom.com/">Chinese</a>
+		<a class="btn3" href="http://eng.loysmarthom.com/">English</a>
+		</div>
+<header class="header">
+<div class="wapper">
+	<h1>来诚科技</h1>
+    <ul>
+        <li class="active"><a href="http://www.loysmarthom.com/">首页</a></li>
+        {loop table="classtype" mshow="1" limit="7"}
+      <li {if($type['tid']==$v['tid'])} class="active"{/if}><a href="{$v['url']}">{$v['classname']}</a></li>
+     {/loop}
+    </ul>
+	    <a class="login" href="http://www.member.com/?l=zh-cn">登录</a>
+	    <a class="register" href="http://www.member.com/index.php/Login/?l=zh-cn">注册</a>
+		<!--<a  class="Langw" id="Jq_change_l" href="javascript:;">Language</a>-->
+
+</div>
+</header>
+<style> 
+body{ {$Think.lang.font}}
+</style>
+
+<script>
+function setLanguageMenu(){
+	var box1 = $("#lang_box");
+	
+	box1.bind("mouseenter", function(){
+		box1.animate({height:"93px"},{duration: 150, easing:"linear"});
+	});
+	box1.bind("mouseleave", function(){
+		box1.animate({height:"29px"},{duration: 150, easing:"linear"});
+	});
+	
+}
+
+setLanguageMenu();
+
+</script>

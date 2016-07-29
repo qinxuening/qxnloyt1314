@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+    <link rel="stylesheet" href="skin/css/products.css">
+     <script type="text/javascript" src="skin/js/products.js"></script>
+</head>
+<body>
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="products">
+	<div class="container top">
+		<div class="row">
+			 <div class="col-xs-8 left">
+				<div class="row">
+					<a href="http://<?php echo syExt('HOST_URL');?>/index.php?c=channel&molds=goods&id=12">
+						<div class="col-xs-12 light">
+								<img src="/skin/img/light.png" alt="">
+								<h2>七彩灯</h2>
+								<p>给您一个多彩的世界</P>
+						</div>
+					</a>			
+					<a href="http://<?php echo syExt('HOST_URL');?>/index.php?c=channel&molds=goods&id=4">		
+						<div class="col-xs-6 remote">
+							    <img src="/skin/img/remote.png" alt="">
+								<h2>智能遥控</h2>
+								<p class="p1">极致的遥控体验</P>
+								<p class="p2">简单操作一目了然</P>
+						</div>
+					</a>
+				   <a href="http://<?php echo syExt('HOST_URL');?>/index.php?c=channel&molds=goods&id=5">										
+						<div class="col-xs-6 web">
+								<img src="/skin/img/Smart Outlet.png" alt="">
+								<h2>智能插座</h2>
+								<p>操作方便，节能安全</P>
+						</div>
+				   </a>					
+				</div>
+			</div>
+			<a href="http://<?php echo syExt('HOST_URL');?>/index.php?c=channel&molds=goods&id=10">	
+			<div class="col-xs-4 closer">
+					<img src="/skin/img/closer.png" alt="">
+					<h2>电动闭门器</h2>
+					<p>安全家居好帮手</P>
+			</div>
+	       </a>			
+	</div>
+	</div>
+</div>
+<div class="products-more" >
+    <div class="container">
+        <div class="head">
+	        <h2>更多产品</h2>
+			<h3><img src="/skin/img/more-product.png"></h3>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="pro">
+                	{foreach $lists as $v}
+						{if($v['id']!=4&&$v['id']!=5&&$v['id']!=10&&$v['id']!=12)}
+	                     <li>
+	                     <a href="{$v['url']}"><img src="{$v['simg']}" alt="{$v['title']}">
+	                     <p class="img-word">{$v['title']}</p>
+	                     </a>
+	                    </li>
+						{/if}
+					{/foreach}
+                </ul>
+            </div>
+			<div class="pages">
+				<ul>
+		      	 {$pages}
+			   </ul>
+		    </div>
+        </div>
+    </div>
+</div>
+<div class="clear-none"></div>
+{include="footer.html"}
+</body>
+</html>

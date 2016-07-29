@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+    <link rel="stylesheet" href="skin/css/download.css">
+     <script src="skin/js/download.js"></script>
+</head>
+<body>
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="download">
+    <div class="download-head">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-6 img_app">
+                    <img src="skin/img/img_app1.png" alt="">
+                </div>
+                <div class="col-xs-6 download-app">
+                    <div class="row" style="padding:0;margin:0;">
+					{loop table="product" tid="25" limit="1"} 
+                        <div class="col-xs-6" style="padding:0;margin:0;">
+                            <div class="download-app-img">
+                                <img id="Android" src="skin/img/Android_Logo_128px_1124364_easyicon.png" alt="安卓下载">
+                                <img id="Ios" src="skin/img/Ios_Logo_128px_1124364_easyis.png" alt="苹果下载">
+                            </div>
+                        </div>
+                        <div class="col-xs-6 download-code" id="Android-code">
+                            <img  src="{$v['androidcode']}" alt="安卓">
+                        </div>
+                         <div class="col-xs-6 download-code" id="Ios-code">
+                            <img  src="{$v['applecode']}" alt="苹果">
+                        </div>
+					{/loop}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="download-album">
+        <div class="container">
+           <div class="download-album-head">
+		        <div class="head">
+			        <h2>画册下载</h2>
+					<h3><img src="/skin/img/Download Album.png"></h3>
+		        </div>
+           </div>
+            <div class="download-album-button">
+            	{loop table="product" tid="38" id=38 limit="20"}
+                <a href="{$v['wendang']}">{$v['title']}</a>
+				{/loop}	
+            </div>
+            <img src="skin/img/album.png" alt="画册下载">
+        </div>
+    </div>
+    <div class="download-Manual">
+        <div class="container">
+            <div class="download-manual-head">
+                <div class="head">
+			        <h2>说明书下载</h2>
+					<h3><img src="/skin/img/Download Manual.png"></h3>
+		        </div>
+            </div>
+            <div class="download-manual-button">
+                <ul>
+                	{loop table="product" tid="38"  limit="20"}
+						{if($v['id']!=38)}
+	                  	  <li><a href="{$v['wendang']}" target="_blank">{$v['title']}</a></li>
+						{/if}
+					{/loop}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="clear-none"></div>
+</div>
+
+
+{include="footer.html"}
+</body>
+</html>

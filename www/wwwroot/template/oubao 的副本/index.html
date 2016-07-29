@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$GLOBALS['S']['keywords']} " />
+<meta name="description" content="{$GLOBALS['S']['description']} " />
+<link rel="stylesheet" type="text/css" href="/skin/css/typo.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/frame.css"/>
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<!--[if lte IE 8]> 
+<script src="/skin/js/ie.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/ie.css"/>
+ <![endif]-->
+<script src="/skin/js/jquery1.42.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/script/jquery.js" ></script>
+<script src="/skin/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="/script/common.js" ></script>
+<link href="/skin/css/global-base.css"  rel="stylesheet" type="text/css" />
+<style>
+
+	.vbox9{display:none;width:900px;height:480px;position:fixed;z-index:1210;top:50%;left:50%;margin-top:-240px;margin-left:-450px;}
+	.vbox9 .vb{width:850px;height:480px;float:left;}
+	.vbox9 .close{width:50px;height:50px;float:right;background:url(skin/images/close_bg.jpg);}
+	.vbox9_bg{display:none;width:100%;height:100%;position:fixed;top:0px;left:0px;filter:alpha(opacity=70);opacity:0.7;background-color:#000000;z-index:1200;}
+
+</style>
+</head>
+
+<body  id="vivo-wrap">
+{include="index_head.html"}
+
+<div class="vbox9">
+<video id="media0" controls="" width="850px" height="480px" loop="loop" class="vb" >
+<source src="box/pc_video.mp4" type="video/mp4">
+<source src="box/pc_video.webm" type="video/webm">
+</video>
+<a href="javascript:void(0);"><div class="close"></div></a>
+</div>
+	 <img src="http://www.ob-hom.com/uploads/2016/05/300947152608.png">
+<div class="vbox9_bg"></div>
+<div class="container index">
+	    <div class="pgnav">
+        <ul><li></li><li></li><li></li><li></li></ul>
+      </div>
+	    <ul class="slider">
+		{loop table="ads" taid="1" type="1"}
+	    	<li class="{$v['name']}"><a href="{$v['gourl']}"><img src="{$v['adfile']}" alt="" /></a></li>
+	   {/loop}
+	    </ul>
+	    <script type="text/javascript">
+	    	jQuery(".container").slide({mainCell:"ul.slider",titCell:".pgnav li",autoPlay:true,mouseOverStop:false,interTime:3000});
+	    </script>
+			<div style="clear:both;"></div>
+		  <div id="vivo-contain">
+		  <div class="focus-event">
+		   <div class="focus-event-box">
+	            	 <div class="key-event">
+	    <ul class="centertri">
+	    	{loop table="ads" taid="5" type="1"}<li><a href="{$v['gourl']}"><img src="{$v['adfile']}" alt="{$v['name']}"/></a></li>{/loop}
+			     <li > 
+					<a href="javascript:void(0);"><img src="/skin/img/video.jpg" alt"视频" id="video_bg0"/></a>
+				 </li>	
+			<!--<li class="video"><a href="/box/jiaju.flv" >{loop table="ads" taid="9" type="1"}<img src="{$v['adfile']}" alt=""/>{/loop}</a></li>-->
+	    	{loop table="ads" taid="6" type="1"}<li><a href="{$v['gourl']}"><img src="{$v['adfile']}" alt="{$v['name']}"/></a></li>{/loop}
+	    </ul>
+	 </div>
+		</div>
+		</div>
+		</div>
+	  </div>	
+{include="bottom.html"}
+
+</body>
+	<script>
+	var v_img = $("#video_bg0");
+	var v_bg = $(".vbox9_bg");
+	var vbox9 = $(".vbox9");
+	var v_close = $(".close");
+	//var v_media = $("#media0");
+	var v_media = document.getElementById("media0");
+	v_img.bind("click", function(){
+		v_bg.show();
+		vbox9.show();
+		v_media.currentTime = 1;
+		v_media.play();
+	});
+	v_close.bind("click", function(){
+		v_media.pause();
+		v_bg.hide();
+		vbox9.hide();
+	});
+	</script>
+</html>

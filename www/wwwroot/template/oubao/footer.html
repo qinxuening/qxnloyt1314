@@ -1,0 +1,85 @@
+<div style="clear:both"></div>
+<div class="footer-top">
+	<div class="container">
+        <div class="col-xs-8" style="text-align:center;">
+            <ul>
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_URL');?>/index.php?c=article&a=type&tid=24">解决方案</a>
+                    <ul class="child-ul">
+                        <li><a href="#">智能家庭</a></li>
+                        <li><a href="#">智能酒店</a></li>
+                        <li><a href="#">智能办公</a></li>
+                        <li><a href="#">智能社区</a></li>
+                    </ul>
+                </li>
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_URL');?>/index.php?c=product&a=type&tid=25">APP下载</a>
+                    <ul class="child-ul">
+                        <li><a href="#">IOS</a></li>
+                        <li><a href="#">安卓</a></li>
+                    </ul>
+                </li>
+                <!--<li><a class="main-a" href="#">技术支持</a>
+                    <ul class="child-ul">
+                        <li><a href="#">维修手册</a></li>
+                        <li><a href="#">疑难杂症</a></li>
+                    </ul>
+                </li>-->
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_URL');?>/index.php?c=article&a=type&tid=26">代理加盟</a>
+                    <ul class="child-ul">
+                        <li><a href="#">加盟条件</a></li>
+                        <li><a href="#">在线留言</a></li>
+                    </ul>
+                </li>
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_URL');?>/index.php?c=article&a=type&tid=27">关于我们</a>
+                    <ul class="child-ul">
+                        <li><a href="javascript:void(0);">公司简介</a></li>
+                        <li class="top" style="display:block;"><a href="javascript:void(0)" >服务中心</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-4 tonline">
+        	<div class="footer-btn">
+	            <button type="button" class="btn btn-danger">
+	                	服务热线
+	            </button>
+			</div>
+            <h1 style="color:#060001;">0755-23016026</h1>
+            <p>周一至周五8：00-19：30（节假日除外）</p>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+	<div class="container">
+		<p style="color:#343434;">深圳市来诚科技有限责任公司</p>
+		<p style="color:#a4a5a6 !important;">来诚科技 © 版权所有 粤ICP备15056806号-1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 深圳市宝安区西乡街道宝源路名优工业产品展示采购中心B座一区410</p>
+	</div>
+</footer>
+<script type="text/javascript">
+	// //设置垂直居中
+	// $('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+	// $(window).resize(function () {
+	// 	var $height = $('.carousel-inner img').eq(0).height() || 
+	// 				  $('.carousel-inner img').eq(1).height() || 
+	// 				  $('.carousel-inner img').eq(2).height();
+	// 	$('.carousel-control').css('line-height', $height + 'px');
+	// });
+
+	//设置文字垂直居中，谷歌浏览器加载图片的顺序问题，导致高度无法获取
+	$(window).load(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+	
+
+	$(window).resize(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+
+	$(window).load(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+	$(window).resize(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+</script>

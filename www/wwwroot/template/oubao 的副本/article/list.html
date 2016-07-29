@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+<link rel="stylesheet" type="text/css" href="/skin/css/typo.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/frame.css"/>
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<!--[if lte IE 8]> 
+<script src="/skin/js/ie.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/ie.css"/>
+ <![endif]-->
+<script src="/skin/js/jquery1.42.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+{include="head.html"}
+ <div class="container">
+<div class="wapper">
+	      <img class="catoheaderpic" src="/skin/img/solution_header.jpg"/>
+	    	<h2>解决方案<br /><span>SOLUTION</span></h2>
+        <p id="crumb"><a href="/">首页</a> > {$type['title']}</p>
+	    <div class="newslist">
+        	<!--<ul class="newstab">
+        		<li class="solutions{if($type['tid']==24)} on{/if}" >{loop table="classtype" tid="24"}<a href="{$v['url']}" style="color:#000000"></a>解决方案{/loop}</li>
+        		<li class="cases {if($type['tid']==37)} on{/if}">{loop table="classtype" tid="37"}<a href="{$v['url']}" style="color:#000000"></a>案例演示{/loop}</li>
+        	</ul>-->
+        <div class="newstitle">
+        			<ul>
+				{foreach $lists as $v}	
+                 <li>
+				 <div class="newspic" style="float:left"> <a href="{$v['url']}" target="_blank"><img src="{$v['litpic']}" alt="" /></a></div>
+                  <div style=" width:800px;float:right;"><div style=" width:650px; height:30px; float:left;"><a href="{$v['url']}" target="_blank">{$v['title']}</a></div>
+				  <div style="clear:both"></div>
+                  <p style="font-size:16px;">{$v['description']}</p></div>
+                </li>
+				{/foreach}
+              
+              </ul>
+              <div class="pages">
+                <ul>
+                  {$pages}
+                </ul>
+              </div>
+	    </div>
+	</div>
+	  </div>
+</div>
+
+{include="bottom.html"}
+</body>
+</html>

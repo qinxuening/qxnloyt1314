@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+    <link rel="stylesheet" href="skin/css/join.css">
+	<script src="skin/js/Validform_v5.3.2.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="join">
+</div>
+<div class="join-content">
+    {$type['body']}
+    <div class="join-tonline">
+        <p>招商加盟热线：0755-23016026</p>
+    </div>
+    <div class="post-suggest">
+        <div class="container">
+            <div class="row">
+               <form class="form-horizontal" action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=30" method="post" id="feedback">
+                  <div class="col-xs-6">
+                  <div class="form-group">
+                    <label for="number" class="col-xs-3 control-label">手机:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="mcell" name="mcell" placeholder="手机" datatype="n5-16" nullmsg="手机号码不能为空" errormsg="请输入正确手机号码" maxlength="16" >
+                    </div>
+                    <div class="col-xs-1 required">*</div> 
+                  </div>  
+                  <div class="form-group">
+                    <label for="qq" class="col-xs-3 control-label">Q &nbsp;Q:</label>
+                    <div class="col-xs-8">
+                      <input type="number" class="form-control" id="mqq" name="mqq"  datatype="n5-11"  errormsg="请输入正确的QQ号码" maxlength="11" placeholder="qq">
+                    </div>
+					<div class="col-xs-1 required">*</div> 
+                  </div>                  
+                  <div class="form-group">
+                    <label for="email" class="col-xs-3 control-label">邮箱:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="memail" name="memail" placeholder="邮箱" maxlength="50" datatype="e" nullmsg="邮箱不能为空" errormsg="请输入正确邮箱格式">
+                    </div>
+                    <div class="col-xs-1 required">*</div> 
+                  </div>
+                    <div class="form-group">
+                    <label for="email" class="col-xs-3 control-label">标题:</label>
+                    <div class="col-xs-8">
+                      <input type="text" id="title" name ="title"  datatype="s2-50" errormsg="标题不能小于两位" class="form-control" id="title" placeholder="标题" >
+                    </div>
+					<div class="col-xs-1 required">*</div> 
+                  </div> 
+                  </div>
+                   <div class="col-xs-6">
+	                  <div class="form-group">
+	                    <label for="number" class="col-xs-1 control-label">留言:</label>
+	                    <div class="col-xs-10">
+	                        <textarea name="body" id="body" class="form-control" rows="5" datatype="*10-200" placeholder="留言内容" nullmsg="内容不能为空" errormsg="内容必须是10-200字" maxlength="200"></textarea>  
+	                    </div>
+	                    <div class="col-xs-1 required">*</div> 
+	                  </div>  
+                      <div class="post-submit-d">
+                       <button type="submit" class="post-submit">提交信息</button>
+                      </div>
+                   </div>
+                   <div class="col-xs-11" style="float:right;">
+					   <div class="well2">
+                           <p>1、我们会对用户的资料进行严格的保密，请放心的填写！</p>
+                           <p>2、感谢您的填写，我们会有专业的人员与您联系，沟通加盟事宜。</p>
+                       </div>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clear-none"></div>  
+</div>
+
+
+{include="footer.html"}
+<script type="text/javascript">
+
+    $(function(){
+        var demo=$("#feedback").Validform({
+            tiptype:3,
+            showAllError:true,
+            datatype:{
+                "z3-16":/^[\w+]{3,16}$/,
+                //
+            },
+            ajaxPost:false
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+    <link rel="stylesheet" href="skin/css/solution.css">
+</head>
+<body>
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="solution">
+    <div class="container">
+           <div class="row">
+            <div class="head">
+                <h1>最快最全的智能解决方案</h1>
+            </div>
+            <div class="solution-list col-xs-12">
+                <ul>
+                	{foreach $lists as $v}
+                    <li><a href="javascript:void(0);"><img src="{$v['litpic']}" alt=""><h4>{$v['title']}</h4><p>{$v['description']}</p></a></li>
+					{/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="clear:both;"></div>
+<div class="pic">
+    <img src="skin/img/solution_pic.png" alt="">
+</div>
+{include="footer.html"}
+</body>
+</html>

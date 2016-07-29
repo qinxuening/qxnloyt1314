@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+<link rel="stylesheet" type="text/css" href="/skin/css/typo.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/frame.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/style.css"/>
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<!--[if lte IE 8]> 
+<script src="/skin/js/ie.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/ie.css"/>
+ <![endif]-->
+<script src="/skin/js/jquery1.42.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+{include="head.html"}
+<div class="container aboutus">
+	    <div class="wapper">
+	    	<img class="catoheaderpic" src="/skin/img/join_header.jpg"/>
+	    	<h2>代理加盟<br /><span>AGENT</span></h2>
+        <p id="crumb"><a href="/">首页</a> > 代理加盟</p>
+		{$type['body']}
+      <form class="applyform" action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=30" method="post" id="feedback">
+        	<h3><i></i>客户留言</h3>
+        	<p class="apply-4">
+        	  <label for="m-name">姓名</label>
+        	  <input type="text" id="mname" name="mname" maxlength="10" datatype="*" sucmsg="" errormsg="姓名长度不能超过10位"  nullmsg="姓名不能为空" maxlength="110" value=""/>
+        	  <span  class="checkre">*</span>
+			</p>
+          <p class="apply-4">
+            <label for="m-cell">手机</label>
+            <input type="tel" id="mcell" name="mcell" datatype="n5-16" nullmsg="手机号码不能为空" errormsg="请输入正确手机号码" maxlength="20" value="" />
+			<span class="checkre">*</span>
+          </p>
+          <p class="apply-4">
+            <label for="m-qq">QQ</label>
+            <input type="text" id="mqq" name="mqq" ignore="ignore" datatype="n5-11" nullmsg="QQ号码不能为空" errormsg="请输入正确的QQ号码" maxlength="20" value="" />
+		  </p>
+          <p class="apply-4">
+            <label for="m-email">邮箱</label>
+            <input type="text" id="memail" name="memail" maxlength="50" datatype="e" nullmsg="邮箱不能为空" errormsg="请输入正确邮箱格式" value="" />
+         	<span class="checkre">*</span>
+		  </p>
+          <p class="apply-6" style="margin-top: -322px;postion:relative;">
+            <label for="m-title">留言主题</label>
+            <input type="text" id="title" name="title" datatype="*" nullmsg="主题不能为空" value=""/>
+			<span class="checkre">*</span>
+          </p>
+          <p class="apply-6">
+            <label>留言内容</label>
+            <textarea name="body" rows="" id="body" cols="" datatype="*10-200" nullmsg="内容不能为空" errormsg="内容必须是10-200字" style="height: 164px"></textarea>
+         	<span class="checkre">*</span>
+		  </p>
+          <p class="statement"><i>*</i>我们会对客户的资料进行严格保密，请您放心填写</p>
+          <div ><button type="submit" style="cursor:pointer;">确认提交</button></div>    	
+        </form> 
+	    </div>
+	  </div>
+	  
+{include="bottom.html"}
+<script src="/skin/js/Validform.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	var demo=$("#feedback").Validform({
+		tiptype:3,
+		showAllError:true,
+		datatype:{
+			"z3-16":/^[\w+]{3,16}$/,
+			//
+		},
+		ajaxPost:false
+	});
+})
+</script>
+</body>
+</html>

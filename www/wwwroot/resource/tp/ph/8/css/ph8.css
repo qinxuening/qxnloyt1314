@@ -1,0 +1,109 @@
+@charset "utf-8";
+/* 充值送手机首页 */
+* { padding: 0; margin: 0 }
+img { border: none; vertical-align: middle }
+ul { list-style: none }
+.clearfix:before, .clearfix:after { content: "."; display: table; height: 0; font-size: 0; line-height: 0; visibility: hidden }
+.clearfix:after { clear: both }
+.clearfix { *zoom:1
+}
+body { width: 990px; margin: 0 auto; font: 14px/1.5 'Microsoft YaHei'; color: #555 }
+.footer { border-top: 1px solid #afa389; text-align: center; padding: 25px }
+h1{ margin:8px 0}
+h2 { border-bottom: 2px solid #fb7500; font-weight: normal; margin: 25px 0 10px }
+h2 span { display: inline-block; background: #fb7500; color: #fff; font-size: 18px; line-height: 36px; padding: 0 30px }
+/**/
+.sale_t { background: url("../images/sale_t.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/sale_t.png*/) no-repeat 1px 0; height: 195px; width: 990px }
+.sale_c { border-left: 1px solid #D1BF9D; border-right: 1px solid #D1BF9D; margin: 0 auto; width: 976px; background: #fff1b4; position: relative }
+.sale_b { background: url("../images/sale_b.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/sale_b.png*/) no-repeat 6px 0; height: 20px }
+.box { margin-top: 6px }
+.box_t { background: url("../images/box_t.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/box_t.png*/) no-repeat 4px 0;  color: #ab1c20; font-size: 20px; line-height: 1; padding-top:16px;height: 39px; text-align:center }
+.box_t em { display: inline-block;width: 6px; height: 12px; overflow:hidden; background: #ab1c20; vertical-align: middle; margin:0 15px }
+.box_c { border-left: 1px solid #D1BF9D; border-right: 1px solid #D1BF9D; margin-left: 4px; width: 979px; background: #fff1b4; padding: 1px 0 }
+.tips_span{ position:relative}
+.tips{ position:absolute; left:-18px;top:-106px; background:url("../images/tips.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/tips.png*/) no-repeat; width:103px; height:88px; font-size:14px; line-height:1.5; color:#555; padding:10px; text-align:left; display:none}
+.box_b { background: url("../images/box_b.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/box_b.png*/) no-repeat 4px 0; height: 20px }
+.sbox { width: 557px; float: right; margin-right: 29px;_display:inline }
+.sbox_t { background: url("../images/sbox_t.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/sbox_t.png*/) no-repeat; height: 54px; line-height: 54px; padding-left: 20px; color: #ab1c20; font-size: 20px }
+.sbox_c { background: #fdfbf0; border-left: 1px solid #c4a66f; border-right: 1px solid #c4a66f; padding-top: 25px; }
+.sbox_b { background: url("../images/sbox_b.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/sbox_b.png*/) no-repeat; height: 17px; }
+/**/
+.sale_l { float: left; margin-top: -96px; position: relative }
+.slogan { background: url("../images/slogan.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/slogan.png*/) no-repeat 0 bottom; width: 390px; height: 500px }
+.slogan_con { padding-top: 390px; line-height: 35px; font-size: 16px; color: #fff }
+.slogan_con em { font-size: 20px; }
+.i_free { background: url("../images/i_free.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/i_free.png*/) no-repeat; width: 120px; height: 120px; position: absolute; top: 0; left: 78px }
+.slider { width: 167px; height: 324px; position: absolute; top: 30px; left: 145px; }
+.flex-control-nav { list-style: none; float: right; position: absolute; right: -45px; top: 303px }
+.flex-control-nav li { display: inline-block; *display:inline;
+zoom: 1; margin: 0 2px; }
+.flex-control-nav a { display: block; width: 14px; height: 14px; overflow:hidden; background: url("../images/slider_li.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/slider_li.png*/); text-indent: -9999px; cursor: pointer }
+.flex-control-nav .flex-active { background: url("../images/slider_li_curr.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/slider_li_curr.png*/) }
+.select li { color: #e1460a; font-size: 16px; border: 2px solid #c0c0bf; height: 50px; line-height: 50px; padding: 0 10px; cursor: pointer }
+.select .curr { border: 2px solid #ff7323; background: url("../images/selected.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/selected.png*/) no-repeat right bottom }
+.select .hover{border: 2px solid #ff7323;}
+.pack_list li { width: 440px; margin: 0 auto 15px;padding:0 23px; }
+.color_list { margin: 25px 0 0 30px }
+.color_list li { display: inline-block; *display:inline;
+zoom: 1; margin-right: 20px; }
+.buy_wrap { font-size: 16px; color: #8e8e8e; margin: 53px 0 0 30px; padding-bottom: 10px }
+.buy_wrap em { font-size: 18px; color: #ff7323 }
+.buy_l { float: right; margin-right: 30px; }
+.pack_tbl { font-size: 16px; color: #333; border-collapse: collapse; margin: 19px 19px 0 }
+.pack_tbl td { border: 2px solid #d5866a; padding: 10px 15px }
+.pack_tbl em { font-style: normal; color: #ff0000 }
+/**/
+.main { width: 870px; margin: 0 auto }
+.detail_title { padding-left: 35px; font-size: 20px; margin: 20px 0 10px }
+.detail_nav { background: #fb7500 }
+.detail_nav li { border-right: 1px solid #c35b00; border-left: 1px solid #fca457; border-bottom: 2px solid #c35b00; float: left; width: 215px; text-align: center; line-height: 38px; }
+.detail_nav a { color: #fff; font-size: 18px; text-decoration: none }
+.detail_nav a:hover {color:#FBE5D2}
+.detail { width: 816px; margin: 0 auto }
+.feature_title { display: inline-block;*display:inline;zoom:1; background: url("../images/feature_title.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/feature_title.png*/) no-repeat left 0; padding-left: 25px; margin-bottom: 5px }
+.feature_title span { display: inline-block; background: url("../images/feature_title.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/feature_title.png*/) no-repeat right 0; padding-right: 25px; line-height: 33px; color: #fff; font-size: 18px; text-align: center }
+.feature_con { font-size: 16px; width: 300px; }
+.cbox { margin-top: 30px }
+.cbox1 { background: url("../images/c1.jpg"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/c1.jpg*/) no-repeat 400px top; height: 218px; padding-top: 80px }
+.cbox2 { background: url("../images/c2.jpg"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/c2.jpg*/) no-repeat; height: 200px; padding: 100px 0 0 482px; margin-top:0 }
+.cbox3 { background: url("../images/c3.jpg"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/c3.jpg*/) no-repeat right 0; height: 200px; padding-top: 50px }
+.cbox4 { background: url("../images/c4.jpg"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/c4.jpg*/) no-repeat; height: 205px; padding: 85px 0 0 520px; }
+.cbox5 { background: url("../images/c5.jpg"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/c5.jpg*/) no-repeat right 0; height: 100px; padding-top: 40px }
+.cbox6 { background: url("../images/c6.jpg"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/c6.jpg*/) no-repeat; height: 180px; padding: 30px 0 0 520px; }
+.img_list li { float: left; margin: 7px; _display:inline }
+.img_list img { width: 190px; }
+.para_table { border-collapse: collapse }
+.para_table th { background: #F0F0F0; width: 10em; }
+.para_table th, .para_table td { border: 1px solid #CCCCCC; padding: 8px; }
+.comment { padding: 0 20px }
+.comment li { margin-top: 10px }
+.service { padding: 0 20px }
+.post { margin-top: 10px }
+.post span { font-size: 18px; }
+.rec li { float: left;_display:inline; background: url("../images/rec_box.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/rec_box.png*/) no-repeat; width: 160px; height: 62px; padding: 10px 0 0 39px; margin: 30px 9px }
+.rec em { font-style: normal; font-size: 18px; color: #ed810c }
+.sidebar { position: fixed;_position:absolute; left: 50%; bottom: 10px; margin-left: 500px; border: 1px solid #069bec; width:163px; height:274px; background:#fff  }
+.sidebar_inner { padding: 12px 10px }
+.tel, .qq { background: #eee; text-align: center; font-size: 16px; color: #069bec; margin-top: 12px; padding: 6px 0 }
+.qq a{color: #069bec; text-decoration:none}
+.service_time { font-size: 12px; }
+.totop { background: url("../images/top.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/top.png*/) no-repeat 15px center #069bec; display: block; color: #fff; text-decoration: none; font-size: 18px; line-height: 42px; text-indent: 50px }
+/*订单页*/
+.o_wrap{ width:810px; margin:0 auto; font-size:16px}
+.o_form p{ margin:15px 0}
+.o_title { border-bottom: 3px solid #8b8b8b; font-size: 20px; font-weight: normal; margin:25px 0 20px }
+.o_title span { display: inline-block; border-bottom: 3px solid #2397b8; margin-bottom: -3px; padding-right: 50px; padding-bottom:5px }
+.pathway{ margin:10px 0}
+.pro { overflow: hidden; zoom: 1; line-height:1.7 }
+.pro em { font-style: normal; color: #ff5a00 }
+.pro i { font-size: 18px; font-weight: bold }
+.o_post { color: #008fb3 }
+.phone_img { float: right; margin-right: 150px; height:160px; }
+.m_label { width: 260px; text-align: right; display: inline-block }
+.m_input { width: 320px; height: 32px; line-height: 32px;font-family: 'Microsoft YaHei'; font-size:14px; padding:0 5px }
+.m_tips { padding-left: 270px; color: red; font-size: 13px; display: block; margin-top:5px; }
+.gopay { background: url("../images/btn_pay.png"/*tpa=http://www.keepc.com/resource/tp/ph/8/images/btn_pay.png*/) no-repeat; width: 279px; height: 62px; margin: 35px auto; border: none; cursor:pointer; display:block}
+.address_tips{ font-size:14px}
+#show_address{ color:#1e92e5}
+.o_service{ font-size:14px; text-align:center; margin:50px 0 100px}
+

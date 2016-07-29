@@ -1,0 +1,88 @@
+@charset "utf-8";
+/* 首页样式 */
+
+.m_table em{color:#00adfd}
+.m_table a{color:#00adfd; text-decoration:underline}
+.m_table a:hover{ color:#1794d7}
+.m_table th,.m_table td{border:1px solid #009cdd; }
+.m_table th{color:#fff; font-size:16px; background:#009cdd; font-weight:normal;padding:8px 0}
+.m_table td{ padding:10px 5px; color:#555}
+.title_en{ color:#9c9c9c; font-size:13px; position:relative; top:1px}
+.title_more{ margin-top:9px}
+
+.link_title{ border-bottom:1px solid #e8e8e8; margin:0 0 18px; font-size:20px;}
+
+/*banner*/
+.banner{ height:462px; overflow:hidden; position:relative}
+.slides li{ zoom:1}
+.slider_link{height:470px; display:block;}
+.flex-control-nav{ position:absolute; top:325px; left:50%; margin-left:400px; width:150px; height:20px}
+.flex-control-nav li{ display:inline-block;*display:inline;zoom:1;}
+.flex-control-nav a{ display:block;width:15px; height:15px; overflow:hidden; background:url("../images/slider.png") no-repeat -20px -1px; text-indent:-9999px; margin:0 4px; cursor:pointer; opacity:0.7;filter:alpha(opacity=70);}
+.flex-control-nav a:hover, .flex-control-nav a.flex-active{ background-position:-2px -1px; }
+
+/*首页下载模块*/
+.d_mobile,.d_pc{background:url("../images/download.png") no-repeat}
+.download{ background:url("../images/banner_bar.png") repeat-x center 0; text-align:center; padding:11px 0 18px; position:relative; margin-top:-113px; height:83px; overflow:hidden}
+.d_mobile{ display:inline-block; width:90px; height:90px; vertical-align:middle; margin:0 20px}
+.d_ios{ background-position:0 0}
+.d_ios:hover{ background-position:-366px 0}
+.d_adr{ background-position:-92px 0}
+.d_adr:hover{background-position:-456px 0}
+.d_sb{ background-position:-182px 0}
+.d_sb:hover{ background-position:-545px 0}
+.d_java{background-position:-273px 0}
+.d_java:hover{background-position:-635px 0}
+.d_pc{ width:246px; height:70px; display:inline-block; vertical-align:middle; background-position:-3px -94px; margin:0 20px 0 25px}
+.d_pc:hover{ background-position:-250px -94px}
+.d_pc:active{ background-position:-497px -94px}
+
+/*首页产品介绍*/
+.intro{ margin-bottom:8px}
+.intro dl{ width:184px; float:left; margin:0 30px;_display:inline;zoom:1 }
+.intro dt{ text-align:center; font-size:16px;color:#000; margin-bottom:4px; height:30px}
+.intro i{ display:block; height:75px; margin-bottom:20px}
+.intro dd{ text-align:justify; text-justify:inter-ideograph}
+.intro_txt{ height:115px; overflow:hidden}
+.intro .i_pc{ background:url(../images/homepage_interactive_security_icon.png) no-repeat;}
+.intro .i_mobile{ background:url(../images/homepage_video_monitoring_icon.png) no-repeat;}
+.intro .i_phone{ background:url(../images/homepage_energy_icon.png) no-repeat;}
+.intro .i_fee{ background:url(../images/homepage_home_automation_icon.png) no-repeat;}
+
+/*充值优惠和最新动态*/
+.info_wrap{ padding-top:30px; background:url("../images/line.png") repeat-x}
+.recharge{ position:relative; width:630px;}
+.recharge_title{font-size:20px; margin-right:20px}
+.recharge_con{ margin-top:13px;}
+.recharge_con table{ text-align:center}
+.topnews{ margin-top:4px; font-size:14px; padding-top:4px}
+.topnews,.topnews a{ color:#da0000;}
+.news{ width:260px;}
+.news_list{ line-height:30px; margin-top:2px}
+.news_list a{ color:#333;}
+.news h2{ font-size:20px}
+
+/*首页客户服务*/
+.service{ width:260px;}
+.service h2{font-size:20px; margin:20px 0 10px}
+.service_con{}
+.service_list{font-size:14px;}
+.service_list li{ float:left; text-align:center; margin-right:10px}
+.service_list a{color:#66676c;}
+.service_list i{ background:url("../images/service.png") no-repeat; height:40px; width:40px; display:inline-block; vertical-align:middle; margin-bottom:5px;}
+.service_list .s_phone{ background-position:0 0;}
+.service_list .s_qq{background-position:-44px 0;}
+.service_list .s_wb_sina{background-position:-88px 0;}
+.service_list .s_wb_tencent{background-position:-131px 0;}
+.s_phone_no{ font-size:12px; vertical-align:middle; line-height:1.2; width:56px; display:inline-block}
+
+/*友情链接*/
+.links_img{ margin-left:-19px;*padding-bottom:13px}
+.links_img li{ border:1px solid #ccc; padding:1px; float:left; margin:0 0 13px 19px;_display:inline;zoom:1 }
+.links_img img{ width:88px; height:31px}
+.links_txt li{ float:left; margin-right:20px;}
+.links_txt a{ white-space:nowrap; color:#7B7B7B; font-size:12px; font-family:simSun}
+
+
+
+

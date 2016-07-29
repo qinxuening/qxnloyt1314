@@ -1,0 +1,35 @@
+<html>
+	<head>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*if (navigator.platform == "iPhone" || navigator.platform == "iPad" || navigator.platform == "iPod") {
+			document.location = 'itms-services://?action=download-manifest&url=https://ob-home.com/download/ob-home.plist'
+		}else{
+			document.location = 'itms-services://?action=download-manifest&url=https://ob-home.com/download/ob-home.plist'
+			//document.location = 'https://ob-home.com/download/ob-home.apk'
+		}*/
+		var agent = navigator.userAgent.toLowerCase() ;
+		var version;
+		if(agent.indexOf("like mac os x") > 0){
+			//ios
+			var regStr_saf = /os [\d._]*/gi ;
+			var verinfo = agent.match(regStr_saf) ;
+			version = (verinfo+"").replace(/[^0-9|_.]/ig,"").replace(/_/ig,".");
+		}
+		var version_str = version+"";
+		if(version_str != "undefined" && version_str.length >0){
+		    version=version.substring(0,1);
+		    if(version>=8 && version<9){
+				//alert(version);
+		        window.location.href ='itms-services://?action=download-manifest&url=https://www.loysmarthome.com/download/new/ob-home2.plist';						
+		    }
+		    else{
+				//alert(version);
+		    	 window.location.href ='itms-services://?action=download-manifest&url=https://www.loysmarthome.com/download/new/ob-home.plist';	
+		    }
+		}	
+		</script>
+	</body>
+
+</html>
