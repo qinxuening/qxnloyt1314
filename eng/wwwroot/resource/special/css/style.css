@@ -1,0 +1,10 @@
+@charset "utf-8";
+/* KC special */
+
+/*首页产品介绍*/
+.intro i{ background:url("../images/intro.png"/*tpa=http://www.keepc.com/resource/special/images/intro.png*/) no-repeat;}
+.intro .i_pc{ background-position:center 4px}
+.intro .i_mobile{ background-position:center -91px}
+.intro .i_phone{ background-position:center -191px}
+.intro .i_fee{ background-position:center -287px}
+

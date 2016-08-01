@@ -1,0 +1,25 @@
+<!--<footer class="footer">
+    <ul>
+    
+    </ul>
+	<p>电话：{fun labelcus(9,'body')} 地址：{fun labelcus(10,'body')}</p>
+	<p>来城科技 © 版权所有 {fun labelcus(11,'body')} </p>
+</footer>
+-->
+<div class="footer">
+<div class="con">
+
+<div class="logo"></div>
+
+<div class="txt">{fun labelcus(13,'body')}<br />
+  	    	{loop table="classtype" mshow="1" limit="7"}
+        	<a href="{$v['url']}">{$v['classname']}&#12288;{if($v['classname']!= '服务中心')}/&#12288;{/if}</a>
+       	     {/loop}
+  <!--<a href="#" target="_blank">解决方案</a>&#12288;/&#12288;产品展示&#12288;/&#12288;APP下载&#12288;/&#12288;最新动态&#12288;/&#12288;服务中心&#12288;/&#12288;关于我们--><br />
+{fun labelcus(10,'body')}&#12288;{fun labelcus(9,'body')}<br />
+<?php echo syExt('site_title');?> © {fun labelcus(12,'body')} {fun labelcus(11,'body')}
+</div>
+
+<div class="ewm"></div>
+</div>
+</div>

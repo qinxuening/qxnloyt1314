@@ -1,0 +1,14 @@
+{fun labelcus(5,'body')}
+{loop table="product" tid="25" limit="1"}
+<root>
+<apkInfo name="{$v['title']}">
+<versionCode>{$v['version']}</versionCode>
+<versionName>{$v['versionName']}</versionName>
+<minVersionCode>{$v['minversionCode']}</minVersionCode>
+<updateInfo>
+{$v['about']}
+</updateInfo>
+<downloadUrl><![CDATA[http://www.ob-home.com{$v['android']}]]></downloadUrl>
+<fileName>{$v['fileName']}.apk</fileName>
+</apkInfo></root>
+{/loop}

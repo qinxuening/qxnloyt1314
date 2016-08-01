@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+    <apkInfo name="e-home">
+       <versionCode>18</versionCode>
+       <versionName>1.9</versionName>
+       <minVersionCode>1</minVersionCode>
+       <updateInfo>
+           <info>1.优化登录时loading显示</info>
+           <info>2.新增查看作业试卷内容功能</info>
+           <info>3.优化主菜单UI效果</info>
+           <info>4.修复部分作业批改时崩溃</info>
+           <info>5.修复断开网络后无人员清单显示，点击全选按钮崩溃</info>
+           <info>6.修复搜索试卷出现相同试卷点击崩溃现象</info>
+           <info>7.修复编辑作业名称后无法选中人员问题</info>         
+	   </updateInfo>
+       <downloadUrl><![CDATA[http://www.loysmarthome.com/uploads/2014/06/271316257688.apk]]></downloadUrl>
+       <!--下载文件名,保存到SD卡的名称-->
+       <fileName>E_home_v1.9.apk</fileName>
+   </apkInfo>
+</root>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+    <link rel="stylesheet" href="/skin/css/products_info.css">
+     <script src="/skin/js/products_info.js"></script>
+</head>
+<body>
+
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="products_info">
+    <div class="container">
+        <div class="head-content">
+            <div class="row">
+                <div class="col-xs-6">
+                    <img src="{$channel['bsimg']}" alt="{$channel['title']}">
+                </div>
+                <div class="col-xs-6 product">
+                    <p class="product-type-name">{$channel['xinghao']}</p>
+                    <h2 class="product-name">{$channel['title']}</h2>
+                    <h3>Main Features:</h3>
+                    <div class="product-feature">
+						{if($channel['tedian1'])}<p>{$channel['tedian1']}</p>{/if}
+		                {if($channel['tedian2'])}<p>{$channel['tedian2']}</p>{/if}
+		                {if($channel['tedian3'])}<p>{$channel['tedian3']}</p>{/if}
+		                {if($channel['tedian4'])}<p>{$channel['tedian4']}</p>{/if}
+						{if($channel['tedian5'])}<p>{$channel['tedian5']}</p>{/if}
+                    </div>
+                    <div class="buy"><a href="">Buy</a></div>
+                 </div>
+            </div>
+			<div class="img_z">
+			{if($channel['gaikuang'])}
+            <div class="head">
+                <h2>Product Overview</h2>
+            </div>
+	        {$channel['gaikuang']}
+			{/if}
+			
+			{if($channel['shuoming'])}
+            <div class="head">
+                <h2>Installation Instruction</h2>
+            </div>
+	        {$channel['shuoming']}
+			{/if}
+
+			{if($channel['peizhi'])}
+			<div class="head">
+                <h2>Device Configuration </h2>
+            </div>
+	        {$channel['peizhi']}
+			{/if}
+			
+			{if($channel['gongneng'])}
+			<div class="head">
+                <h2>Learning</h2>
+            </div>
+			{$channel['gongneng']}
+			{/if}
+			
+			{if($channel['shezhi'])}
+			<div class="head">
+                <h2>More Settings</h2>
+            </div>
+	        {$channel['shezhi']}
+			{/if}
+			
+			{if($channel['jiejue'])}
+			<div class="head">
+                <h2>Solutions</h2>
+            </div>
+	        {$channel['jiejue']}
+			{/if}
+			</div>
+        </div>
+    </div>
+</div>
+
+
+{include="footer.html"}
+</body>
+</html>

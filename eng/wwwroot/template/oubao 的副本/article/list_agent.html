@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+<link rel="stylesheet" type="text/css" href="/skin/css/typo.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/frame.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/style.css"/>
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<!--[if lte IE 8]> 
+<script src="/skin/js/ie.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/ie.css"/>
+ <![endif]-->
+<script src="/skin/js/jquery1.42.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+{include="head.html"}
+<div class="container aboutus">
+	    <div class="wapper">
+	    	<img class="catoheaderpic" src="/skin/img/join_header.jpg"/>
+	    	<h2>Join Us<br /><span>AGENT</span></h2>
+        <p id="crumb"><a href="/">Home</a> > Join Us</p>
+		{$type['body']}
+      <form class="applyform" action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=30" method="post" id="feedback">
+        	<h3><i></i>Leave a Message</h3>
+        	<p class="apply-4">
+        	  <label for="m-name">Name：</label>
+        	  <input type="text" id="mname" name="mname" maxlength="10" sucmsg=" " datatype="*" nullmsg="Name cannot be empty" maxlength="10" value=""/>
+        	 <span class="checkre">*</span>
+			</p>
+          <p class="apply-4">
+            <label for="m-cell">Mobile：</label>
+            <input type="tel" id="mcell" name="mcell" datatype="m" sucmsg=" " nullmsg="Mobile cannot be empty" errormsg="Incorrect Mobile" maxlength="20" value="" />
+          	<span class="checkre">*</span>
+		  </p>
+          <p class="apply-4">
+            <label for="m-qq">QQ：</label>
+            <input type="text" id="mqq" name="mqq" ignore="ignore" datatype="n5-11" sucmsg=" " nullmsg="QQ cannot be empty" errormsg="Incorrect QQ" maxlength="20" value="" />
+          </p>
+          <p class="apply-4">
+            <label for="m-email">Email：</label>
+            <input type="text" id="memail" name="memail" maxlength="50" sucmsg=" " datatype="e" nullmsg="Email cannot be empty" errormsg="Incorrect Email" value="" />
+         	<span class="checkre">*</span>
+		  </p>
+          <p class="apply-6" style="margin-top: -322px;postion:relative;">
+            <label for="m-title">Title：</label>
+            <input type="text" id="title" name="title" datatype="*" sucmsg=" " nullmsg="Title cannot be empty" value=""/>
+         	<span class="checkre">*</span>
+		  </p>
+          <p class="apply-6">
+            <label>Content：</label>
+            <textarea name="body" rows="" id="body" cols="" sucmsg=" " datatype="*10-200" nullmsg="Content cannot be empty" errormsg="10-200 Letters" style="height: 164px"></textarea>
+          	<span class="checkre">*</span>
+		  </p>
+          <p class="statement"><i>*</i>All information will be kept confidential</p>
+          <div ><button type="submit" style="cursor:pointer;">Submit</button></div>    	
+        </form>
+	    </div>
+	  </div>
+	  
+{include="bottom.html"}
+<script src="/skin/js/Validform.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+$(function(){
+	var demo=$("#feedback").Validform({
+		tiptype:3,
+		showAllError:true,
+		datatype:{
+			"z3-16":/^[\w+]{3,16}$/,
+			//
+		},
+		ajaxPost:false
+	});
+})
+</script>
+</body>
+</html>

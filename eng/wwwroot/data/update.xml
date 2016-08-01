@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?><root>
+<apkInfo name="O-Home">
+<versionCode>19</versionCode>
+<versionName>V1.0.0.19</versionName>
+<minVersionCode>1</minVersionCode>
+<updateInfo>
+<info>1.修改摄像机对讲功能</info>
+<info>2.修复摄像机设置功能还原问题</info></updateInfo>
+<downloadUrl><![CDATA[http://www.loysmarthome.com/uploads/2015/02/051542571419.apk]]></downloadUrl>
+<fileName>O-Home.apk</fileName>
+</apkInfo></root>

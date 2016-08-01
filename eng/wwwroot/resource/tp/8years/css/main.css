@@ -1,0 +1,314 @@
+@charset "utf-8";
+* { padding: 0; margin: 0 }
+img { border: 0 none; vertical-align: middle }
+ul { list-style: none }
+em { font-style: normal }
+table { border-collapse: collapse }
+textarea { resize: none; overflow-y: auto }
+.clearfix:before, .clearfix:after { content: "."; display: table; height: 0; font-size: 0; line-height: 0; visibility: hidden }
+.clearfix:after { clear: both }
+.clearfix { *zoom:1
+}
+.fs14 { font-size: 14px }
+/**/
+body{ font-family:'Microsoft YaHei'}
+input, textarea { font-family: 'Microsoft YaHei'; font-size: 100%; color: #4f4f4f; }
+.main { width: 980px; margin: 0 auto; padding: 315px 0 80px }
+.nav { height: 86px; background: url("../images/nav.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/nav.png*/) no-repeat 0 -79px; padding-left: 30px }
+.nav li { float: left; _display: inline; margin-right: 10px }
+.nav a { display: block; height: 86px }
+.nav_item1 { width: 310px; }
+.nav_item2 { width: 280px; }
+.nav_item3 { width: 310px; }
+.title { background: #c12121; height: 59px; }
+
+/*首页抽奖*/
+.lucky_bg{ background:#f99120 url("../images/lucky_bg.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/lucky_bg.jpg*/) no-repeat top center;}
+.lucky_top{ width:980px; height:79px; overflow:hidden; margin:auto; background:url("../images/nav.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/nav.jpg*/) no-repeat 0 -79px}
+.lucky_top p{ display:inline-block; float:left}
+.lucky_top p img{ border:0; cursor:pointer}
+.lottery_right p:hover,.lucky_06_botton:hover,.lucky_07_botton:hover,.down img:hover,.fk_ck_02_sr img:hover{	filter:alpha(opacity=80);-moz-opacity:0.8;-khtml-opacity: 0.8;opacity: 0.8; cursor:pointer}
+.lucky_01{ width:980px; height:585px; margin:auto; background:url("../images/lucky_04.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/lucky_04.jpg*/) no-repeat 0 79px}
+.lucky_02{ width:980px; height:524px; margin:auto; background:url("../images/lucky_05.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/lucky_05.jpg*/) no-repeat}
+.lucky_03{ width:980px; height:368px; margin:auto; background:url("../images/lucky_06.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/lucky_06.jpg*/) no-repeat; overflow:hidden}
+.lucky_04{ width:980px; height:899px; margin:auto; background:url("../images/lucky_07.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/lucky_07.jpg*/) no-repeat;}
+.lottery { width: 576px; height: 471px;  float: left; position: relative; overflow: hidden ; margin:28px 0 0 247px;_margin:28px 0 0 124px;}
+.lottery_turn { margin: 11px 0 0 11px; width: 450px; height: 450px; overflow: hidden; }
+.lottery_pointer { position: absolute; left: 170px; top: 148px }
+.lottery_desc { background: url("../images/lottery_desc.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/lottery_desc.png*/) no-repeat #EB9A02 19px 15px; width: 328px; height: 471px; float: right; padding-left: 42px }
+.lottery_right{ position:absolute; margin:64px 0 0 32px;_margin:68px 0 0 40px;}
+.mulitline{ font-size:12px; color:#36303c; height:240px; width:365px; overflow:hidden; margin-right:190px}
+.mulitline li{ margin-bottom:10px;_margin-bottom:15px;}
+.mulitline li span{ color:#F00}
+.lottery_right_02{ margin:40px 0 0 220px;}
+.lottery_right_03{ margin:26px 0 0 277px;}
+.lottery_right_04{ margin:18px 0 0 320px;}
+.lottery_right_05{ margin:18px 0 0 277px;}
+.lottery_right p{ width:70px; height:42px; background:url("../images/lucky_11.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/lucky_11.png*/) no-repeat 0 center;}
+.lucky_08{ font-size:12px; color:#fff; text-align:center; width:100%; padding:20px 0 30px 0; background:#cb2e35}
+.lottery_right_01{ width:380px; height:240px; margin-right:120px; overflow:hidden; float:left;_display:inline}
+.lottery_right_01 .jcarousel-clip-vertical{width:380px; height:240px; overflow:hidden; }
+.lottery_right_01 li{ width:380px; height:15px;}
+.lottery_right_botton{ float:left;}
+.lottery_right{ overflow:hidden}
+.padding{ text-align:center;margin:800px 50px 0 0;_margin:800px 20px 0 0; }
+.bottom{ text-align:center; width:100%; font-size:12px; color:#fff; float:left; margin-top:-70px}
+.go{ cursor:pointer; display: none}
+.down{margin:583px 0 0 0;_margin:577px 0 0 0; float:left; overflow:hidden; margin-left:212px; _margin-left:0; _padding-left:180px;}
+.down img{ margin:0 22px}
+/**/
+.lucky_top a{ display:block; height:79px;}
+#page_index{ width:340px}
+#page_index:hover,.curr #page_index{ background:url("../images/nav.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/nav.jpg*/) no-repeat 0 0;}
+#page_invite{ width:307px;}
+#page_invite:hover,.curr #page_invite{background:url("../images/nav.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/nav.jpg*/) no-repeat -340px 0;}
+#page_idea{ width:333px}
+#page_idea:hover,.curr #page_idea{background:url("../images/nav.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/nav.jpg*/) no-repeat -647px 0;}
+/*抽奖*/
+.fk_ck_bg{ background:#f99120 url("../images/fk_ck_bg.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/fk_ck_bg.jpg*/) no-repeat top center;}
+.fk_ck_01{  height:512px; background:url("../images/fk_ck_01.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/fk_ck_01.jpg*/) no-repeat center 79px}
+.fk_ck_02{ width:980px; height:190px; margin:auto; background:url("../images/fk_ck_02.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/fk_ck_02.jpg*/) no-repeat}
+.fk_ck_03{ width:980px; height:189px; margin:auto; background:url("../images/fk_ck_03.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/fk_ck_03.jpg*/) no-repeat}
+.fk_ck_04{ width:980px; height:auto; margin:auto; background:#cc2e26; overflow:hidden}
+.fk_ck_04_left{ float:left;overflow:hidden; width:615px; }
+.fk_ck_04_left th{ color:#333333; border-bottom:1px solid #cdc962; font-size:14px; padding:8px 0; font-weight:inherit; }
+.fk_ck_04_left td{ padding:5px 0; text-align:center; color:#333333; font-size:12px; font-weight:inherit}
+.table_01{ margin-left:3px;width:293px;height:370px; background:#fffcb4; float:left;_display:inline; padding:5px}
+.table_01 table{ float:left; }
+.table_01 span{ display:inline-block; padding:4px 4px; background:#ff6c00; color:#fff;}
+.table_02{ margin-left:0}
+.fk_ck_04_right{ width:365px; float:left;}
+.mulitline1{}
+.mulitline1 li{ }
+.fk_ck_05{width:980px; height:139px; margin:auto; background:url("../images/fk_ck_06.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/fk_ck_06.jpg*/) no-repeat}
+.fk_ck_06{ width:100%; height:58px; text-align:center; font-size:12px; color:#ff9ca9; padding-top:40px; background:#87010b}
+.fk_ck_02_sr{ float:right;_display:inline; margin:72px 55px 0 0; width:300px}
+.fk_ck_02_sr input{ border:1px solid #e15268; width:288px; height:40px; line-height:40px; margin:0; padding:0 0 0 10px;}
+.fk_ck_02_sr img{ margin:14px 0 0 73px}
+/*创意*/
+.creative_pk_bg{ background:#f99120 url("../images/creative_pk_bg.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_bg.jpg*/) no-repeat center 0;}
+.creative_pk_01{ background:url("../images/creative_pk_01.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_01.jpg*/) no-repeat center 79px;  height:550px;}
+.creative_pk_02{ background:#BB0018; overflow:hidden; width:978px; height:1032px; margin:auto;_width:980px;}
+.creative_pk_02_left{ float:left; width:623px;}
+.creative_tp{ width:613px; height:758px; background:url("../images/creative_pk_15.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_15.jpg*/) repeat-y; height:auto; overflow:hidden}
+.creative_tp_01_left{ float:left; margin-left:25px; margin-top:10px;}
+.creative_tp_01_right{ float:right; display:inline-block; margin-right:30px}
+.creative_tp_01_right input{ height:31px; border:1px solid #ca990b; width:152px; background:#fff; vertical-align:middle; font-size:12px; text-indent:4px;}
+.creative_tp_02{ width:557px; height:84px; background:#bb0018; overflow:hidden; margin-left:25px; margin-top:13px;}
+.creative_tp_02_nr{ float:left; width:544px;}
+.creative_tp_02_left{ float:left}
+.creative_tp_02_right{ float:left}
+.creative_tp_02_nr table{width:100%; margin:12px 0}
+.creative_tp_02_nr table td{ padding:0 5px}
+.creative_td_01{ background:url("../images/creative_pk_22.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_22.jpg*/) no-repeat; width:44px; height:62px;}
+.creative_td_01 p{ color:#ff8a00; height:26px; padding-top:5px; font-size:18px; font-family: 黑体, Arial, Helvetica, sans-serif}
+.creative_td_02{ width:240px; font-size:14px; color:#fff;}
+.creative_td_02 img{ vertical-align:middle; margin-left:5px}
+.creative_td_02 span{ display:inline-block; width:19px; height:19px; text-align:center; line-height:19px;background:url("../images/creative_pk_26.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_26.jpg*/) no-repeat; margin-right:10px; color:#ff8a00; font-size:12px;}
+.creative_td_03{ color:#fff; font-size:12px;}
+.creative_td_03 img{ margin-right:4px; vertical-align:middle}
+.creative_td_04{ line-height:150%; color:#fff; font-size:12px;}
+.creative_tp_03{ background:#e6eca3; padding:5px; color:#333; font-size:12px; font-size:12px;  height:12px; margin:10px auto; width:250px; text-align:center}
+.creative_tp_03 span{ text-align:center; padding:0 5px}
+.creative_tp_01{ overflow:hidden}
+.creative_pk_02_right{ width:355px; float:right;}
+.creative_pk_02_right_01{ margin-bottom:5px; float:left}
+.creative_pk_02_right_01 img{ float:left}
+.creative_pk_02_right_nr{ background:#fded88; height:auto; width:100%; color:#333; float:left}
+.creative_pk_02_right_nr table{ margin:0 0 0 5px; width:346px;}
+.creative_pk_02_right_nr_01 span{ width:22px; height:22px; line-height:24px; text-align: center; color:#fff; font-size:14px;background:url("../images/creative_pk_04.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_04.png*/) no-repeat; display:inline-block; margin-right:5px}
+.creative_pk_02_right_nr_02 span{ text-align:center; width:54px; height:25px;display:inline-block;background:url("../images/creative_pk_05.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_05.jpg*/) no-repeat; line-height:25px; color:#fff; font-size:14px;font-family: 黑体, Arial, Helvetica, sans-serif}
+.creative_pk_02_right_nr_03{ font-size:12px; color:#333; padding:5px;}
+.creative_pk_02_right_nr_04 span{ float:left; margin:0 5px; color:#ac9c37; font-size:12px;}
+.creative_pk_02_right_nr_05 img{ margin-left:1px}
+.creative_pk_02_right_nr_01{ font-size:14px;font-family: 黑体, Arial, Helvetica, sans-serif}
+.creative_pk_02_right_nr_02{ padding-right:6px;}
+.creative_pk_02_right_cx p{ display:inline-block;float:left}
+.creative_pk_02_right_cx_01{ width:272px; height:50px; background:url("../images/creative_pk_19.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_19.jpg*/) no-repeat; }
+.creative_pk_02_right_cx_01 input{ border:0; margin:15px 0 0 10px; width:250px; font-size:14px}
+.creative_pk_02_right_ph{  width:333px; height:292px; overflow:hidden; background:#FBFFCD;border:1px solid #8d0c11; border-bottom:0;border-top:0; padding:0 10px;}
+.creative_pk_02_right_ph table{   float:left; border:0; width:332px; }
+.creative_pk_02_right_ph table th{ background:#FBFFCD; border-bottom:1px solid #cdbd58; margin:0 10px; color:#333333; font-size:14px; font-weight: normal; padding-bottom:5px;}
+.creative_pk_02_right_ph table td{ text-align:center; height:27px;}
+.creative_pk_05{ width:978px; height:564px; margin:auto; background:url("../images/creative_pk_18.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/creative_pk_18.jpg*/) no-repeat 0 2px #BD051D;}
+
+
+
+
+.lottery_wrap { padding: 25px 0 34px 34px; background: #f0b102; }
+.lottery { width: 576px; height: 471px;  float: left; position: relative; overflow: hidden }
+.lottery_turn { margin: 7px 0 0 11px; width: 450px; height: 450px; overflow: hidden }
+.lottery_pointer { position: absolute; left: 170px; top: 148px }
+.lottery_form{ padding:25px 0 25px 35px;}
+.lottery_form .w_input{margin-bottom: 10px}
+.lottery_form .w_btn_orange{margin-top:10px}
+.lottery_desc { background: url("../images/lottery_desc.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/lottery_desc.png*/) no-repeat #EB9A02 19px 15px; width: 328px; height: 471px; float: right; padding-left: 42px }
+
+
+
+/**/
+.weedialog{font:12px/1.5 'Microsoft YaHei'}
+.w_tips { padding: 14px; background: #f4f4f4; line-height: 1.8; border-bottom: 1px solid #d8d8d8 }
+.w_tips em { color: #ff4e00 }
+.w_tips_only { padding: 25px 14px }
+.w_tips_succ { padding-left: 90px; background: url("../images/w_tips_succ.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_tips_succ.png*/) no-repeat 30px center; min-height: 46px; _height: 46px }
+.w_tips_warn { padding-left: 80px; background: url("../images/w_tips_warn.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_tips_warn.png*/) no-repeat 20px center; min-height: 46px; _height: 46px }
+.btn_wrap_center { text-align: center; margin: 22px 0 }
+.w_btn_orange { background: url("../images/w_btn_orange.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_btn_orange.png*/) no-repeat #ff5a00; width: 100px; height: 36px; line-height: 36px; display: inline-block;  color: #fff; text-decoration: none; font-size: 14px; border: 0 none; text-align: center; cursor:pointer }
+.w_btn_green { background: url("../images/w_btn_green.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_btn_green.png*/) no-repeat #5db310; width: 100px; height: 36px; line-height: 36px; display: inline-block;  color: #fff; text-decoration: none; font-size: 14px; border: 0 none; text-align: center; cursor:pointer }
+.w_btn_orange_s { background: url("../images/w_btn_orange_s.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_btn_orange_s.png*/) no-repeat #ff5a00; width: 100px; height: 37px; line-height: 37px; display: inline-block; color: #fff; text-decoration: none; font-size: 19px; border: 0 none; text-align: center;cursor:pointer }
+.w_btn_green_s { background: url("../images/w_btn_green_s.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_btn_green_s.png*/) no-repeat #5db310; width: 100px; height: 37px; line-height: 37px; display: inline-block; color: #fff; text-decoration: none; font-size: 19px; border: 0 none; text-align: center;cursor:pointer }
+.w_btn_orange_xs { background: url("../images/w_btn_orange_xs.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/w_btn_orange_xs.png*/) no-repeat #ff5a00; width: 97px; height: 33px; line-height: 33px; display: inline-block; color: #fff; text-decoration: none; font-size: 18px; border: 0 none; text-align: center; vertical-align: middle }
+.w_tips_title { font-size: 16px; color: #ff4e00 }
+.invite_friend_con { margin: 20px 0 20px 25px }
+.w_input,.w_input_wrap { margin-left:0;font-size: 14px; height: 31px; line-height: 31px; vertical-align: middle; border: 1px solid #ddd; padding: 0 4px }
+.w_input_wrap{ margin-bottom:16px; overflow:hidden}
+.w_input_wrap input{ height:30px; line-height:30px;padding-left:0;vertical-align:middle;margin-left:22px; font-size:12px; border:0 none}
+.idea_publish { margin: 25px }
+.w_label { line-height: 31px; height: 31px; width: 70px; font-size: 14px; display: inline-block }
+.w_input_tips { text-align: right; padding-right: 32px; margin-top: 3px }
+.w_textarea { font-size: 14px; line-height: 1.5; border: 1px solid #ddd; vertical-align: top; height: 190px; padding: 0 4px }
+.receive_form{ padding:25px 0 25px 35px}
+.w_input_uid{ background:url("../images/phone.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/phone.png*/) no-repeat 5px 9px; width:280px;}
+.w_input_code{ background:url("../images/people.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/people.png*/) no-repeat 5px 9px; width:205px; float:left;}
+.w_btn_tips{ color:#ff4e00; vertical-align:bottom; padding-left:10px}
+.wrap-placeholder{text-align:left}
+
+
+/*排名 add by yue*/
+.rank_in{ background:#CD243E; float:right;_display:inline; width:308px; height:120px; overflow:hidden; margin:44px 38px 0 0; color:#fff; font-family:'Microsoft YaHei'; font-size:14px; padding:10px}
+.rank_detail{ margin:10px 0 0}
+.rank_detail span{ display:inline-block; vertical-align:middle; background:#a3182e; padding:6px; line-height:1 }
+.rank_detail em{ display:inline-block; font-size:12px; width:25px; vertical-align:middle; line-height:1.3}
+.rank_share{ display:inline-block; *display:inline;*zoom:1; vertical-align:middle}
+.copy_btn{ color:#5d2500; font-size:12px; background:url("../images/copy_btn.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/copy_btn.jpg*/) no-repeat; width:60px; height:28px; border:none}
+
+/**分页**/
+.page_nav { padding: 15px 0; text-align: center }
+.page_nav a { display: inline-block; background: #941006; padding: 5px; margin: 0 5px; line-height: 1; color: #fff; text-decoration: none }
+.page_nav a:hover { text-decoration: underline }
+.page_nav .now { display: inline-block; background: #ff8400; padding: 5px; line-height: 1; color: #fff; }
+.count_num{ text-align:center; color:#fff}
+
+.idea_detail { color: #ba0905; text-decoration: none; display:inline-block}
+.creative_td_04 .idea_detail{ color:#F6C01D}
+
+/**弹框**/
+h3 {color:#ffe893; font-size:1.6em; padding-bottom:10px; margin:0; border-bottom:1px solid #498687}
+
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+
+/* Container */
+#simplemodal-container {height:auto; width:450px; color:#333; background-color:#fef4bf; border:4px solid #c92a2e; }
+#simplemodal-container a.modalCloseImg {background:url("../images/basic_01.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_01.jpg*/) no-repeat; width:30px; height:31px; display:inline; z-index:3200; position:absolute; top:0; right:0; cursor:pointer;}
+#basic-modal-content p{ text-align:center; float:left; margin-top:30px; color:#fff; line-height:170%; font-size:1.2em; width:33%;}
+#basic-modal-content p a img{ width:70%}
+.pop_up_01{ padding:5px 10px; width:100%; overflow:hidden}
+.pop_up_01_02{ width:53px; height:26px;background:url("../images/basic_02.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_02.jpg*/) no-repeat; color:#fff; font-size:14px; line-height:26px; text-align:center; display:inline-block; margin-left:10px; float:left}
+.pop_up_01_01{ float:left; vertical-align: middle;}
+.pop_up_01_03{ width:104px; height:25px;background:url("../images/basic_03.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_03.jpg*/) no-repeat; color:#fff; font-size:14px; line-height:26px; text-align:center; display:inline-block; margin-left:10px; float:left}
+.pop_up_01_04{ width:19px; height:19px;background:url("../images/basic_05.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_05.jpg*/) no-repeat; color:#fff; font-size:12px; line-height:19px; text-align:center; display:inline-block;  float:left; margin-right:5px;}
+.pop_up_01_05{ margin-left:5px; float:left}
+.pop_up_01_06{ float:right;  margin-right:20px}
+.pop_up_01_06 img{ margin-right:5px;}
+.pop_up_01_07{ float:left}
+.pop_up_02{ width:430px; margin-left:10px; margin-bottom:10px}
+.pop_up_02 textarea{ width:428px; border:1px solid #c39390; background:#fff; font-size:12px; line-height:170%; height:200px}
+.pop_up_03{ text-align:center; margin:10px 0}
+.pop_up_03 img{ text-align:center; margin:0 10px}
+.pop_up1_01{background:url("../images/basic_13.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_13.jpg*/) no-repeat top center; width:450px; height:auto;}
+.pop_up1_02{ font-size:14px; font-weight:bold; font-family:微软雅黑, Arial, Helvetica, sans-serif; padding:60px 0 0 40px; color:#333;}
+.pop_up1_03{ padding:36px 0 0 3px;font-size:20px;  font-family:微软雅黑, Arial, Helvetica, sans-serif; color:#333;}
+.pop_up1_03 p{ float:left; margin:0 0 0 98px}
+.pop_up1_04{ width:360px; padding-left:40px; padding-top:5px}
+.pop_up1_04 a{width: 360px;font-family: 微软雅黑, Arial, Helvetica, sans-serif;color: #fff;padding: 15px 0;text-align: center;background: #f02e2e;display: inline-block;text-decoration:none; font-size:20px}
+.pop_up1_04 a:hover{ width:360px; font-family:微软雅黑, Arial, Helvetica, sans-serif; color:#fff; padding:15px 0; text-align:center; background:#c42222; display:inline-block}
+.pop_up1_05{padding-left:40px; padding-top:80px}
+.pop_up1_06{padding-left:40px; padding-top:20px}
+.pop_up1_07{ width:360px;padding-left:40px; padding-top:5px; overflow:hidden; padding-bottom:20px}
+.pop_up1_07 input{ width:196px; height:16px; padding:14px 0;float:left; border:1px solid #e4d99f; text-indent:4px;}
+.pop_up1_07 img{ float:left; margin-left:10px}
+.pop_up1_08{ width:360px;padding-left:40px; padding-top:80px; padding-bottom:40px; text-align:center}
+.pop_up2_01{background:url("../images/basic_11.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_11.jpg*/) no-repeat top center; width:450px; height:auto;}
+.pop_up2_01_01{ width:100%; text-align:center;font-family:黑体, Arial, Helvetica, sans-serif; color:#c92a2e; font-weight:bold; padding-top:180px; font-size:20px; padding-bottom:40px}
+.pop_up3_01{ width:450px; height:276px; background:url("../images/basic_15.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/basic_15.jpg*/) no-repeat bottom center; }
+.pop_up_01{ _padding:15px 0;}
+.pop_up1_03 p {_margin: 0 0 0 95px;}
+.pop_up1_03 {_padding: 36px 0 0 0px; _margin-left:-86px}
+.pop_up1_05{ _clear:both; padding-top:30px}
+.pop_up_02 textarea{ _width:405px}
+a{ _cursor:pointer}
+/**/
+.news_list_wrap{ padding:10px;background:#ff8610;width:332px}
+.news_list_wrap .jcarousel-clip-vertical{width: 332px;height:360px; overflow:hidden;}
+.news_list {   margin-left:6px; padding:10px; font-size:12px; overflow:hidden }
+.news_list li{ position:relative;height: 20px; width: 332px;padding:10px 0; color:#fff; border-bottom:1px dashed #fff}
+/**/
+.evt_nav_right { height: 352px;  width: 168px; font-size:14px; }
+.evt_nav_right a{ text-decoration:none}
+.evt_nav { padding-top: 10px; position: fixed;_position:absolute; top: 10px; right:10px; z-index: 999; }
+.evt_nav_reg {  display: block; width: 161px;  background:#d63151; margin-left:5px; }
+.evt_nav_reg .idea { padding: 5px; color: #fff;  }
+.evt_nav_reg .fot { color: #ffe155; font-size:14px;}
+.evt_nav_reg .idea_num { display: inline-block; margin-top: 8px; }
+.evt_nav_reg .idea_num span { background: url("../images/left_nav2.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/left_nav2.jpg*/) no-repeat; color: #bc1c3b; display: inline-block; height: 32px; line-height: 32px; margin-right: 13px; text-align: center; width: 69px; }
+.evt_nav_reg .mstao { background: none repeat scroll 0 0 #fe4f56; margin-top:15px; padding:6px 4px; }
+.evt_nav_reg .num { background: none repeat scroll 0 0 #d63151; border-radius: 12px 12px 12px 12px; color: #FFFFFF; display: inline-block; font-size: 12px; height: 24px; line-height: 24px; text-align: center; width: 24px; }
+.evt_nav_reg .fot1 { color: #fff; font-size:12px; padding-left:4px;}
+.evt_nav_reg .fot2{border-top:solid 1px #d63151; line-height:18px; padding-top:6px; font-size:12px;}
+.evt_nav_reg .history { margin: 15px 0 15px; text-align: center;}
+
+.evt_nav_reg .btn_red { width: 148px; background: none repeat scroll 0 0 #ffe051; border: medium none; border-radius: 18px 18px 18px 18px; box-shadow: 0 3px 0 #cbab15; color: #bc1c3b; display: inline-block; font-size: 21px; height: 34px; line-height: 36px; text-align: center; }
+.evt_nav_reg .over { height: 36px; width: 36px; padding-right:5px; float:left; padding-bottom:10px;}
+.evt_nav_reg .play { height: 36px; width: 102px; float:left; padding-bottom:10px;}
+.evt_nav_reg .ridr {background: url("../images/left_nav3.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/left_nav3.jpg*/) no-repeat scroll center 6px #d63151;  border-radius: 18px 18px 18px 18px; color: #FFFFFF; display: inline-block; font-size: 12px; height: 36px; text-align: center; width: 36px; }
+.evt_nav_reg .fot3 { color: #fff; font-size:14px; padding-left:4px; line-height:36px; height:36px; text-align:left;}
+.evt_nav_reg .fot3 a{ color: #fff; font-size:14px;}
+
+.evt_nav_reg .over1 { height: 36px; width: 36px; padding-right:5px; float:left;  padding:10px 0px 6px;  border-top:solid 1px #d63151;}
+.evt_nav_reg .play1{ height: 36px; width: 102px; float:left;  padding:10px 0px 6px;  border-top:solid 1px #d63151;}
+
+.evt_nav_reg .ridr1 {background: url("../images/left_nav4.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/left_nav4.jpg*/) no-repeat scroll center 6px #d63151;  border-radius: 18px 18px 18px 18px; color: #FFFFFF; display: inline-block; font-size: 12px; height: 36px; text-align: center; width: 36px; }
+.evt_nav_reg .ridr2 {background: url("../images/left_nav5.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/left_nav5.jpg*/) no-repeat scroll center 6px #d63151;  border-radius: 18px 18px 18px 18px; color: #FFFFFF; display: inline-block; font-size: 12px; height: 36px; text-align: center; width: 36px; }
+.evt_nav_reg .ridr3 {background: url("../images/left_nav6.jpg"/*tpa=http://www.keepc.com/resource/tp/8years/images/left_nav6.jpg*/) no-repeat scroll center 6px #d63151;  border-radius: 18px 18px 18px 18px; color: #FFFFFF; display: inline-block; font-size: 12px; height: 36px; text-align: center; width: 36px; }
+
+
+.mod_close { background-color: #FFFFE3; background-position: -18px 3px; cursor: pointer;  height: 16px; overflow: hidden; text-indent: -999px; width: 15px; position:absolute; top:5px; right:5px;}
+.mod_close { background-image: url("../images/hint.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/hint.png*/); background-repeat: no-repeat; }
+
+/**/
+.news_list_wrap{ padding:10px;background:#ff8610;width:332px}
+.news_list_wrap .jcarousel-clip-vertical{width: 332px;height:360px; overflow:hidden;}
+.news_list {   margin-left:6px; padding:10px; font-size:12px; overflow:hidden }
+.news_list li{ position:relative;height: 20px; width: 332px;padding:10px 0; color:#fff; border-bottom:1px dashed #fff}
+/**/
+.btn_gosite{ background:url("../images/btn_gosite.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/btn_gosite.png*/) no-repeat center center #ffe051; display:inline-block; width:148px; height:34px; line-height:34px; text-align:center; font-size:18px; color:#bc1c3b; margin-top:5px}
+.btn_about{background:url("../images/btn_about.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/btn_about.png*/) no-repeat center center #ff4e55; display:inline-block; width:148px; height:35px; line-height:34px; text-align:center; font-size:18px; color:#fff; margin-top:5px}
+/*献花*/
+.flower{ position:relative; display:inline-block}
+.flower span{ position:absolute; top:-12px; left:40px; color:#BB0018; font-size:18px;  font-family:Arial, Helvetica, sans-serif}
+
+.creative_tp_02_nr .flower span{ color:#fff}
+
+.card_tips{ color:#ff4d00}
+/*弹窗*/
+.w_wrap{ background:rgba(0,0,0,0.5); z-index:9999; position:absolute; top:0; left:0; width:100%; height:100%}
+.xb_con{ width:944px;margin:60px auto; }
+.xb_m{ background:#fff; padding:0 40px}
+.xb_t{ position:relative}
+.xb_close{ position:absolute; width:52px; height:52px; background:url("../images/xb_close.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/xb_close.png*/) no-repeat; right:20px; bottom:-20px; text-indent:-9999px; outline:none}
+.xb_title{ background:url("../images/star.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/star.png*/) no-repeat 0 41px;  padding:40px 0 10px 22px}
+.xb_txt{ font-size:14px; color:#6A6A6A; line-height:1.5}
+.xb_txt em{ color:#c83933}
+.xb_txt a{color:#c83933}
+.x_download li{ float:left}
+.x_download li a{margin-top:138px; width:138px; display:inline-block; text-align:center; color:#fff; line-height:35px; text-decoration:none}
+.xd_1{ background:url("../images/xd_pc.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/xd_pc.png*/) no-repeat; width:205px; height:190px;}
+.xd_1 a{ margin-left:13px}
+.xd_2{ background:url("../images/xd_ios.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/xd_ios.png*/) no-repeat; width:220px; height:190px;}
+.xd_2 a{ margin-left:40px}
+.xd_3{ background:url("../images/xd_android.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/xd_android.png*/) no-repeat; width:208px; height:190px;}
+.xd_3 a{ margin-left:30px}
+.xd_4{ background:url("../images/xd_ipad.png"/*tpa=http://www.keepc.com/resource/tp/8years/images/xd_ipad.png*/) no-repeat; width:182px; height:190px;}
+.xd_4 a{ margin-left:26px}

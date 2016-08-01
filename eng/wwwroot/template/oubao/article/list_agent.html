@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	{include="head.html"}
+    <link rel="stylesheet" href="skin/css/join.css">
+	<script src="skin/js/Validform_v5.3.2.js" type="text/javascript" charset="utf-8"></script>
+    <script src="skin/js/style.js"></script>
+</head>
+<body>
+
+{include="nav.html"}
+<div style="clear:both;"></div>
+<div class="join">
+
+</div>
+<div class="join-content">
+    {$type['body']}
+    <div class="join-tonline">
+        <p>Hotline：0755-23016026</p>
+    </div>
+    <div class="post-suggest">
+        <div class="container">
+        	       <form class="form-horizontal" action="{$GLOBALS['WWW']}index.php?c=message&a=add&tid=30" method="post" id="feedback">
+                  <div class="col-xs-6">
+                  <div class="form-group">
+                    <label for="number" class="col-xs-3 control-label">Mobile:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="mcell" name="mcell" placeholder="Mobile" datatype="n5-16" nullmsg="Phone Number connot be empty" errormsg="Incorrect Number" maxlength="16" >
+                    </div>
+                    <div class="col-xs-1 required">*</div> 
+                  </div>  
+                  <div class="form-group">
+                    <label for="qq" class="col-xs-3 control-label">Q &nbsp;Q:</label>
+                    <div class="col-xs-8">
+                      <input type="number" class="form-control" id="mqq" name="mqq"  datatype="n5-11"  nullmsg="connot be empty" errormsg="Incorrect Number" maxlength="11" placeholder="qq">
+                    </div>
+					<div class="col-xs-1 required">*</div> 
+                  </div>                  
+                  <div class="form-group">
+                    <label for="email" class="col-xs-3 control-label">Email:</label>
+                    <div class="col-xs-8">
+                      <input type="text" class="form-control" id="memail" name="memail" placeholder="Email" maxlength="50" datatype="e" nullmsg="Email connot be empty" errormsg="Mailbox format is not">
+                    </div>
+                    <div class="col-xs-1 required">*</div> 
+                  </div>
+                    <div class="form-group">
+                    <label for="email" class="col-xs-3 control-label">Title:</label>
+                    <div class="col-xs-8">
+                      <input type="text" id="title" name ="title"  datatype="s2-50" errormsg="connot be empty" nullmsg="connot be empty" class="form-control" id="title" placeholder="Title" >
+                    </div>
+					<div class="col-xs-1 required">*</div> 
+                  </div> 
+                  </div>
+                   <div class="col-xs-6">
+	                  <div class="form-group">
+	                    <label for="number" class="col-xs-2 control-label">Content:</label>
+	                    <div class="col-xs-9">
+	                        <textarea name="body" id="body" class="form-control" rows="5" datatype="*10-200" placeholder="Content" nullmsg="Message connot be empty" errormsg="10 to 200 any character!" maxlength="200"></textarea>  
+	                    </div>
+	                    <div class="col-xs-1 required">*</div> 
+	                  </div>  
+                      <div class="post-submit-d">
+                       <button type="submit" class="post-submit">Submit</button>
+                      </div>
+                   </div>
+                   <div class="col-xs-11" style="float:right;">
+					   <div class="well2">
+                           <p>1. We will be strict confidentiality of the user's information ， please be relieved to sign it.</p>
+                           <p>2. Thank for your signment, our professional workers will contact with you about the cooperation as soon.</p>
+                       </div>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+     <div class="clear-none"></div>  
+</div>
+
+
+{include="footer.html"}
+<script type="text/javascript">
+
+    $(function(){
+        var demo=$("#feedback").Validform({
+            tiptype:3,
+            showAllError:true,
+            datatype:{
+                "z3-16":/^[\w+]{3,16}$/,
+                //
+            },
+            ajaxPost:false
+        });
+		demo.tipmsg.r="ok";
+		demo.tipmsg.c = "Checking…";
+    })
+</script>
+</body>
+</html>

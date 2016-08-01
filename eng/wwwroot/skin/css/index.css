@@ -1,0 +1,95 @@
+@charset "utf-8";
+.video {
+    height: 560px;
+    margin: 140px auto 0 auto;
+	background:#ececec;
+	padding:40px 0;
+}
+.box{
+    width:955px;height:543px;
+    margin: 0 auto;
+    background: #ececec url("img/video2.png") no-repeat 0px 0px;
+}
+.box img{
+    cursor: pointer;
+}
+#media0{
+    cursor: pointer;
+    width:860px;height:485px;
+    display: block;
+    border: none;
+    margin:0 auto;
+}
+video {
+    object-fit: contain;
+}
+.index-about{
+    background: #ffffff;
+    padding:0 0 40px 0;
+}
+.index-about .head{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #75cbff;
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+.index-about .head h2{
+    color:#31b1ff;
+    text-align: center;
+    font-weight:600;
+    font-size: 24px;
+    width: 150px;
+    height: 50px;
+    line-height: 50px;
+    margin:0 auto;
+	font-weight:500;
+	float:left;
+	padding-left:40px;
+    border-bottom: 3px solid #0284cf;
+	background:url(../img/about-us-head.png) no-repeat 0 10px;
+}
+.index-about .head h3{
+	height: 50px;
+    line-height: 50px;
+	width:100px;
+	float:left;
+	text-align:left;
+	margin:0 auto;
+	color:#868686;
+	font-size:30px;
+	border-bottom: 3px solid #0284cf;
+}
+.index-about .index-about-content{
+    margin:0 0 40px 0;
+    font-size: 15px;
+}
+.index-about .index-about-content .smart-home{
+	padding-left:220px;
+	background:url(../img/Smart-Home.png) no-repeat 10px 10px;
+}
+.index-about .index-about-content p{
+    line-height: 30px;
+    letter-spacing: 1px;
+    text-indent: 25px;
+    font-size: 15px;
+}
+.index-about .index-about-content .home{
+    text-align: left;
+    margin: 20px auto;
+    font-weight:400;
+    font-size: 25px;
+    color:#0ea7ba;
+    text-indent: 0;
+}
+
+
+
+
+
+
+
+
+
+
+

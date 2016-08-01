@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$article['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+<link rel="stylesheet" type="text/css" href="/skin/css/typo.css"/>
+<link rel="stylesheet" type="text/css" href="/skin/css/frame.css"/>
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<!--[if lte IE 8]> 
+<script src="/skin/js/ie.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/skin/css/ie.css"/>
+ <![endif]-->
+<script src="/skin/js/jquery1.42.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/skin/js/jquery.SuperSlide.2.1.1.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+{include="head.html"}
+<div class="container news">
+	    <div class="wapper">
+	    	<h2>{$article['title']}</h2>
+	    	<p class="newsinfo">来源：瓯宝智能家居<span class="time">时间：{fun date('Y-m-d H:i:s',$article['addtime'])} </span></p>
+        <p id="crumb">{$positions}</p>
+        <div class="news-content">
+        	{$article['body']}
+        </div>
+	    </div>
+	  </div>
+{include="bottom.html"}
+</body>
+</html>

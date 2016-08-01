@@ -1,0 +1,136 @@
+@charset "utf-8";
+.about {
+    margin: 150px auto 0 auto;
+    padding: 0;
+
+}
+.about .pic{
+    text-align: center;
+	background:url(../img/about-head.png) no-repeat center center;
+	height:294px;
+	margin:0 auto;
+}
+.head {
+    height: 100px;
+    line-height: 100px;
+    border-bottom: 1px solid #cfcfcf;
+    text-align: center;
+    margin: 10px 0;
+}
+.head h2 {
+    color: #0ea7ba;
+    text-align: center;
+    font-weight: 400;
+    font-size: 35px;
+    width: 150px;
+    height: 100px;
+    line-height: 100px;
+    margin: 0 auto;
+    border-bottom: 1px solid red;
+}
+.about-content .head{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #75cbff;
+    text-align: center;
+    margin: 50px 0 20px 0;
+}
+.about-content .head h2{
+    color:#31b1ff;
+    text-align: center;
+    font-weight:400;
+    font-size: 24px;
+    width: 220px;
+    height: 50px;
+    line-height: 50px;
+    margin:0 auto;
+	float:left;
+	padding-left:30px;
+    border-bottom: 3px solid #0284cf;
+	background:url(../img/Company-Profile-head.png)  0 15px no-repeat;
+}
+.about-content .head h3{
+	height: 50px;
+    line-height: 50px;
+	width:140px;
+	float:left;
+	text-align:left;
+	margin:0 auto;
+	color:#868686;
+	font-size:30px;
+	border-bottom: 3px solid #0284cf;
+}
+.about-content{
+    background: #ffffff;
+    padding-bottom: 100px;
+}
+.about-content-body{
+
+}
+.about-content-body p {
+    line-height: 30px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    margin-bottom: 0;
+    text-indent: 25px;
+}
+.about-connect{
+    margin: 0 auto;
+	background:#f5f5f5;
+	padding:0 0 100px 0;
+}
+.clear-none{
+    position: relative;
+	z-index:-1;
+	height:40px;
+	margin-bottom:-20px;
+	background: #f5f5f5;
+}
+.about-connect .head{
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #75cbff;
+    text-align: center;
+    margin: 40px 0;
+}
+.about-connect .head h2{
+    color:#31b1ff;
+    text-align: center;
+    font-weight:400;
+    font-size: 24px;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    margin:0 auto;
+	float:left;
+	padding-left:30px;
+    border-bottom: 3px solid #0284cf;
+	background:url(../img/contact-us-head.png)  0 10px no-repeat;
+}
+.about-connect .head h3{
+	height: 50px;
+    line-height: 50px;
+	width:100px;
+	float:left;
+	text-align:left;
+	margin:0 auto;
+	color:#868686;
+	font-size:30px;
+	border-bottom: 3px solid #0284cf;
+}
+.contact-img {
+	margin:20px 0 0 0;
+}
+.contact-img img{
+	width:460px;
+	height:260px;
+}
+.BMapLabel{
+    height: 20px;
+    padding: 0 50px 0 0 !important;
+    background: none;
+}
+.anchorBL{
+    display: none !important;
+}
+

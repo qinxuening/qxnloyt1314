@@ -1,0 +1,85 @@
+<div style="clear:both"></div>
+<div class="footer-top">
+	<div class="container"  style="text-align:center;">
+        <div class="col-xs-8" >
+            <ul>
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_ENURL');?>/index.php?c=article&a=type&tid=24">Solution</a>
+                    <ul class="child-ul">
+                        <li><a href="#">Smart Home</a></li>
+                        <li><a href="#">Smart Hotel</a></li>
+                        <li><a href="#">Smart Office</a></li>
+                        <li><a href="#">Smart Community</a></li>
+                    </ul>
+                </li>
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_ENURL');?>/index.php?c=product&a=type&tid=25">Download App</a>
+                    <ul class="child-ul">
+                        <li><a href="#">IOS</a></li>
+                        <li><a href="#">Android</a></li>
+                    </ul>
+                </li>
+                <!--<li><a class="main-a" href="#">技术支持</a>
+                    <ul class="child-ul">
+                        <li><a href="#">维修手册</a></li>
+                        <li><a href="#">疑难杂症</a></li>
+                    </ul>
+                </li>-->
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_ENURL');?>/index.php?c=article&a=type&tid=26">Join Us</a>
+                    <ul class="child-ul">
+                        <li><a href="#">Requirements</a></li>
+                        <li><a href="#">Leave a Message</a></li>
+                    </ul>
+                </li>
+                <li><a class="main-a" href="http://<?php echo syExt('HOST_ENURL');?>/index.php?c=article&a=type&tid=27">About Us</a>
+                    <ul class="child-ul">
+                        <li><a href="javascript:void(0);">Company Profile</a></li>
+                        <li class="top" style="display:block;"><a href="javascript:void(0)" >Services</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+		<div class="col-xs-4 tonline">
+			<div class="footer-btn">
+	            <button type="button" class="btn btn-danger">
+	                	Hotline
+	            </button>
+			</div>
+            <h1 style="color:#060001;">0755-23016026</h1>
+            <p>Working Hours: Monday to Friday 8:00-19:30 (Except holidays)</p>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+	<div class="container">
+		<p style="color:#343434;">Shenzhen Loyalty Technology Co., Ltd.</p>
+		<p style="color:#a4a5a6 !important;">Loyalty Technology © copyright Guangdong ICP for 15056806-1  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Address:Room 410,Building B,NO.1 Block, Mingyou Exhibition Center,Baoyuan Road,Xixiang Subdistrict,Baoan District,Shenzhen City,Guangdong Province.</p>
+	</div>
+</footer>
+<script type="text/javascript">
+	// //设置垂直居中
+	// $('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+	// $(window).resize(function () {
+	// 	var $height = $('.carousel-inner img').eq(0).height() || 
+	// 				  $('.carousel-inner img').eq(1).height() || 
+	// 				  $('.carousel-inner img').eq(2).height();
+	// 	$('.carousel-control').css('line-height', $height + 'px');
+	// });
+
+	//设置文字垂直居中，谷歌浏览器加载图片的顺序问题，导致高度无法获取
+	$(window).load(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+	
+
+	$(window).resize(function () {
+		$('.text').eq(0).css('margin-top', ($('.auto').eq(0).height() - $('.text').eq(0).height()) / 2 + 'px');
+	});
+
+	$(window).load(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+	$(window).resize(function () {
+		$('.text').eq(1).css('margin-top', ($('.auto').eq(1).height() - $('.text').eq(1).height()) / 2 + 'px');
+	});
+
+</script>

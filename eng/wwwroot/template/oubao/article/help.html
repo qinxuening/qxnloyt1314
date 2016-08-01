@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$type['title']}-{$GLOBALS['S']['title']}</title>
+<meta name="keywords" content="{$type['keywords']} " />
+<meta name="description" content="{$type['description']} " />
+<link rel="stylesheet" href="/resource/common/css/base.css" >
+<link rel="stylesheet" href="/resource/common/css/main.css" >
+<link rel="stylesheet" href="/resource/special/css/style.css" >
+<link rel="shortcut icon" href="/skin/img/favicon.ico" type="image/x-icon" />
+<script src="/resource/common/js/jquery.js" ></script>
+<script src="/resource/common/js/utils.js" ></script>
+<script src="/resource/common/js/main.js" ></script>
+</head>
+
+<body>
+{include="head.html"}
+<div class="main">
+  <div class="inner p_help clearfix">
+    <div class="help_l">
+      <h3 >{loop table="classtype" tid="29" limit="1"}<a href="{$v['url']}">{$v['classname']}</a>{/loop}</h3>
+      <div id="leftnav1"> 
+       <ul class="leftnav" >  <li class="curr">
+          <ul>
+		  {loop table="classtype" pid="29" as="v1"}
+            <li><a href="{$v1['url']}">{$v1['classname']}</a></li>
+			{/loop}
+          </ul>
+        </li> </ul>
+      </div>
+      <h3>自助服务</h3>
+      <ul class="self_list">
+        <li><a href="#">用户注册</a> </li>
+      </ul>
+    </div>
+    <div class="help_r">
+      <div class="help_path"> 
+      </div>
+      <div id="help_content"> 
+        <dl class="question_list">
+		 {foreach $lists as $v}
+          <dt>{$v['title']}</dt>
+          <dd>
+            <div class="help_box_t"></div>
+            <div class="help_box_m"> <em>答：</em><span>
+              <p> <span style="color: rgb(102, 102, 102); font-family: Arial, 宋体; line-height: 24px;">{$v['description']}</span> </p>
+			  <p style="text-align:right;color: rgb(102, 102, 102); font-family: Arial, 宋体; line-height: 24px;">更多...</p>
+              </span> </div>
+            <div class="help_box_b"></div>
+          </dd>
+		  {/foreach}
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+{include="bottom.html"}
+</body>
+</html>
