@@ -24,5 +24,7 @@ $configs= array(
 	'URL_MODEL'             => 0,       // URL访问模式,可选参数0、1、2、3,代表以下四种模式：
 	
 	'DB_PARAMS' => array(\PDO::ATTR_CASE => \PDO::CASE_NATURAL), //原数据库默认小写转换为跟数据库本身一样
+	
+		
 );
 return  array_merge($configs,$dataconfig);

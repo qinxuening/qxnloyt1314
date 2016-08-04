@@ -68,19 +68,18 @@
 	}
 	
 	function curlSMS($url,$post_fields=array()){
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_URL,$url);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		$ch = curl_init();//初始化
+		curl_setopt($ch, CURLOPT_URL,$url);//设置你所需要抓取的URL
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);////设置获取的信息以文件流的形式返回，而不是直接输出。
 		curl_setopt($ch, CURLOPT_TIMEOUT, 3600); //60秒
-		curl_setopt($ch, CURLOPT_HEADER,1);
+		curl_setopt($ch, CURLOPT_HEADER,1);////设置头文件的信息作为数据流输出
 		curl_setopt($ch, CURLOPT_REFERER,'http://www.yourdomain.com');
-		curl_setopt($ch,CURLOPT_POST,1);
-		curl_setopt($ch, CURLOPT_POSTFIELDS,$post_fields);
-		$data = curl_exec($ch);
+		curl_setopt($ch,CURLOPT_POST,1);// //设置post方式提交
+		curl_setopt($ch, CURLOPT_POSTFIELDS,$post_fields);////设置post数据
+		$data = curl_exec($ch);//执行命令
 		curl_close($ch);
 		$res = explode("\r\n\r\n",$data);
-		return $res[2];
-			
+		return $res[2];	
 	}
 
 	function CheckwType($wType){
@@ -110,6 +109,35 @@
 		}
 	}	
 	
+	/**
+	 * 合并数组
+	 * @author qxn
+	 * @param unknown $post_arr
+	 * @param unknown $merge_array
+	 * @return multitype:|unknown
+	 */
+	function Check_array_merge($post_arr , $merge_array){
+		if($post_arr && $merge_array) {
+			return  array_merge($post_arr , $merge_array);
+		}elseif ($post_arr && !$merge_array){
+			return $post_arr;
+		}elseif (!$post_arr && $merge_array){
+			return $merge_array;
+		}
+	}
+	
+	/**
+	 * 把某一二维数组中的某个键值当做另一个数组的键名
+	 * @author
+	 * @param unknown $arr
+	 * @return multitype:
+	 */
+	function Pid_TouchID_merge($arr){
+		foreach ($arr as $k => $v){
+				$arra[$v['Pid']] = explode(',' , $v['StouchID']);
+		}
+		return $arra;
+	}
 	/**
 	 * 日志记录
 	 * @author qxn
@@ -151,17 +179,5 @@
 		//return 'function 自动调用';
 		dump($array,1,'<pre>',0);
 	}	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 ?>

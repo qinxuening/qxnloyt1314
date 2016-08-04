@@ -17,4 +17,31 @@ class MobilemanagerModel extends Model{
 			return false;
 		}
 	}
+	
+	public function Pid_TouchID_merge_array($arr){
+		$list = $this->field('Pid')->where(array('left(`McID`,2)' => 14 ,wUseID => session('wUseID')))->select();
+		$list = TarrayToOarray($list , 'Pid');
+		foreach ($arr as $k => $v){
+			if(in_array($v['Pid'], $list)){
+				$arra[$v['Pid']] = $v['StouchID'];
+			}
+		}
+		if(empty($arra)){
+			foreach ($list as $key => $value){
+				$array[$value] = array('0');
+			}
+			return $array;
+		}
+		foreach ($list as $key => $value){
+			foreach ($arra as $ke => $va){
+				if(!$arra[$value]){
+					$array[$value] = array('0');
+				}else{
+					if($ke == $value) $array[$value] = explode(',' , $va);
+				}
+			}
+		}
+		return $array;
+
+	}
 }

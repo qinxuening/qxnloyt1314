@@ -73,10 +73,10 @@ class MobileController extends CommonController{
 			   $mLinkOn_Off = TarrayToOarray($findLinkOn_Off, 'Pid');
 			   $mLinkOff_On = TarrayToOarray($findLinkOff_On, 'Pid');
 			   
-			   $mLinkOn_TouchID_merge = Pid_TouchID_merge($findLinkOn);
-			   $findLinkOff_TouchID_merge = Pid_TouchID_merge($findLinkOff);
-			   $findLinkOn_Off_TouchID_merge = Pid_TouchID_merge($findLinkOn_Off);
-			   $findLinkOff_On_TouchID_merge = Pid_TouchID_merge($findLinkOff_On);
+			   $mLinkOn_TouchID_merge = $this->mobilemanager->Pid_TouchID_merge_array($findLinkOn);
+			   $findLinkOff_TouchID_merge = $this->mobilemanager->Pid_TouchID_merge_array($findLinkOff);
+			   $findLinkOn_Off_TouchID_merge = $this->mobilemanager->Pid_TouchID_merge_array($findLinkOn_Off);
+			   $findLinkOff_On_TouchID_merge = $this->mobilemanager->Pid_TouchID_merge_array($findLinkOff_On);
 			   
 			   if('14' == $find['McID1']) $this->assign('McID1' , $find['McID1']);
 			   $this->assign("mLinkOn",$mLinkOn);
@@ -193,8 +193,7 @@ class MobileController extends CommonController{
 		/*$list = array_unique($list);
 		foreach ($list as $key => $value){
 			foreach ($UserMobile as $k => $v){
-				if($value == $v['wUseID']){
-					$arr[$value][] = $v;
+				if($value == $v['wUseID']){					$arr[$value][] = $v;
 				}
 			}
 		}*/
