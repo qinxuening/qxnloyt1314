@@ -1,5 +1,6 @@
 <?php
 namespace Home\Controller;
+use Think\Cache\Driver\Redis;
 class UserController extends CommonController{
 	protected $usermanager;
 	protected $users;
@@ -7,9 +8,9 @@ class UserController extends CommonController{
 	
 	public function _initialize(){
 		parent::_initialize();
-		$this->usermanager = D("Home/Usermanager");	
-		$this->users = D("Home/Users");
-		$this->mobilemanager = D("Home/Mobilemanager");
+		$this->usermanager = D("Usermanager");	
+		$this->users = D("Users");
+		$this->mobilemanager = D("Mobilemanager");
 		$this->assign('langue',L('langue'));
 	}
 	
@@ -32,8 +33,27 @@ class UserController extends CommonController{
 	
 	public function addmyfamily(){
 		//echo RUNTIME_PATH;
-		echo COMMON_PATH;
+		//echo COMMON_PATH;
 		//$this->usermanager->execute('call addmyfamily()');
+		//初始化
+		$str = '16040_1402';
+		echo '16040_1402'.'<br/>';
+		echo substr($str, 0 , stripos($str, '_')).'<br/>';
+		echo substr($str, stripos($str, '_') + 1);
+		/*Redis::getInstance();
+		$curl = curl_init();
+		//设置抓取的url
+		curl_setopt($curl, CURLOPT_URL, 'http://www.baidu.com');
+		//设置头文件的信息作为数据流输出
+		curl_setopt($curl, CURLOPT_HEADER, 1);
+		//设置获取的信息以文件流的形式返回，而不是直接输出。
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+		//执行命令
+		$data = curl_exec($curl);
+		//关闭URL请求
+		curl_close($curl);
+		//显示获得的数据
+		print_r($data);*/
 	}
 	
 	public function del(){

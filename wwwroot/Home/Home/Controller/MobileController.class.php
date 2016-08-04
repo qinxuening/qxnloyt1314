@@ -8,10 +8,10 @@ class MobileController extends CommonController{
 	
 	public function _initialize(){
 		parent::_initialize();
-		$this->mobilemanager = D("Home/Mobilemanager");
-		$this->modeltype = D("Home/Modeltype");
-		$this->linklist = D("Home/Linklist");
-		$this->timeaction = D("Home/Timeaction");
+		$this->mobilemanager = D("Mobilemanager");
+		$this->modeltype = D("Modeltype");
+		$this->linklist = D("Linklist");
+		$this->timeaction = D("Timeaction");
 	}
 	
 	public function index(){	
@@ -59,24 +59,36 @@ class MobileController extends CommonController{
  		if($this->mobilemanager->CheckPid($Pid)){
 	 		$where['Pid'] = array('neq', $Pid);
 	 		$where['wUseID'] = array('eq', session("wUseID"));
-			$list = $this->mobilemanager->where($where)->field('Pid , McName')->order('Item ASC')->select();
-			$find = $this->mobilemanager->where(array("Pid" => $Pid))->field('Pid , McName , IsMsg')->find();
+			$list = $this->mobilemanager->where($where)->field('Pid , McName , McID , left(`McID`,2) as McID1')->order('Item ASC')->select();
+			$find = $this->mobilemanager->where(array("Pid" => $Pid))->field('Pid , McName , IsMsg , left(`McID`,2) as McID1 , McID')->find();
+			$touch = $this->linklist->where(array("McID" => $Pid))->field('MtouchID')->find();
+			$touch = explode(',' , $touch['MtouchID']);
 			if($find){
-			   $findLinkOn = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>1))->field('Pid')->select();//联动开
-			   $findLinkOff = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>2))->field('Pid')->select();//联动关
-			   $findLinkOn_Off = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>3))->field('Pid')->select();//反联动开
-			   $findLinkOff_On = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>4))->field('Pid')->select();//反联动关
-			   
+			   $findLinkOn = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>1))->field('Pid , StouchID')->select();//联动开
+			   $findLinkOff = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>2))->field('Pid , StouchID')->select();//联动关
+			   $findLinkOn_Off = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>3))->field('Pid , StouchID')->select();//反联动开
+			   $findLinkOff_On = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>4))->field('Pid , StouchID')->select();//反联动关
 			   $mLinkOn = TarrayToOarray($findLinkOn, 'Pid');
 			   $mLinkOff = TarrayToOarray($findLinkOff, 'Pid');
 			   $mLinkOn_Off = TarrayToOarray($findLinkOn_Off, 'Pid');
 			   $mLinkOff_On = TarrayToOarray($findLinkOff_On, 'Pid');
 			   
+			   $mLinkOn_TouchID_merge = Pid_TouchID_merge($findLinkOn);
+			   $findLinkOff_TouchID_merge = Pid_TouchID_merge($findLinkOff);
+			   $findLinkOn_Off_TouchID_merge = Pid_TouchID_merge($findLinkOn_Off);
+			   $findLinkOff_On_TouchID_merge = Pid_TouchID_merge($findLinkOff_On);
+			   
+			   if('14' == $find['McID1']) $this->assign('McID1' , $find['McID1']);
 			   $this->assign("mLinkOn",$mLinkOn);
 			   $this->assign("mLinkOff",$mLinkOff);
 			   $this->assign("mLinkOn_Off",$mLinkOn_Off);
 			   $this->assign("mLinkOff_On",$mLinkOff_On);
-			   $this->assign('mobile',$find);
+			   $this->assign("mLinkOn_TouchID_merge",$mLinkOn_TouchID_merge);
+			   $this->assign("findLinkOff_TouchID_merge",$findLinkOff_TouchID_merge);
+			   $this->assign("findLinkOn_Off_TouchID_merge",$findLinkOn_Off_TouchID_merge);
+			   $this->assign("findLinkOff_On_TouchID_merge",$findLinkOff_On_TouchID_merge);
+			   $this->assign('mobile', $find);
+			   $this->assign('touch' , $touch);
 			   $this->assign("myMobile",$list);
 			   $this->display();
 			}else{
@@ -87,7 +99,7 @@ class MobileController extends CommonController{
  		}
 	}
 
-	public function update(){		
+	public function update(){
 		$Pid = intval(I('get.id'));
 		if($this->mobilemanager->CheckPid($Pid)){
 			$data = I('post.');
@@ -96,14 +108,35 @@ class MobileController extends CommonController{
 				$this->mobilemanager->where(array("Pid" => $Pid, 'wUseID' => session('wUseID')))->save($data);
 			}
 			$this->linklist->where(array('McID' => $Pid))->delete();
-			$wModelLinkOn = I('post.LinkOn', null);
-			$wModelLinkOff = I('post.LinkOff', null);
-			$wModelLinkOn_Off = I('post.LinkOn_Off', null);
-			$wModelLinkOff_On = I('post.LinkOff_On', null);
+			foreach (I('post.') as $k => $v){
+				if(strpos($k , 'LinkOn_') !== false) {
+					$SLinkOn[] = substr($k, strlen('LinkOn_'));
+					$arr1[substr($k, strlen('LinkOn_'))] = implode($v , ',');
+				}
+				if(strpos($k , 'LinkOff_') !== false) {
+					$LinkOff[] = substr($k, strlen('LinkOff_'));
+					$arr2[substr($k, strlen('LinkOff_'))] = implode($v , ',');
+				}
+				if(strpos($k , 'LinkOnOff_') !== false) {
+					$LinkOnOff[] = substr($k, strlen('LinkOnOff_'));
+					$arr3[substr($k, strlen('LinkOnOff_'))] = implode($v , ',');
+				}
+				if(strpos($k , 'LinkOffOn_') !== false) {
+					$LinkOffOn[] = substr($k, strlen('LinkOffOn_'));
+					$arr4[substr($k, strlen('LinkOffOn_'))] = implode($v , ',');
+				}
+			}
+			$touch = implode($data['touch11'], ',');
+			$wModelLinkOn = Check_array_merge(I('post.LinkOn', null) , $SLinkOn);
+			$wModelLinkOff = Check_array_merge(I('post.LinkOff', null) , $LinkOff);
+			$wModelLinkOn_Off = Check_array_merge(I('post.LinkOn_Off', null) , $LinkOnOff);
+			$wModelLinkOff_On = Check_array_merge(I('post.LinkOff_On', null) , $LinkOffOn);
 		    for($i=0;$i<count($wModelLinkOn);$i++){
 			    $data['McID']=$Pid;
-				$data['Pid']=$wModelLinkOn[$i];
+				$data['Pid'] = $wModelLinkOn[$i];
 			    $data['wModeltype']=1;
+			    $data['MtouchID'] = $touch ? $touch : '0';
+			    $data['StouchID'] = $arr1[$wModelLinkOn[$i]] ? $arr1[$wModelLinkOn[$i]] : '0';
 				$this->linklist->create();
 				$this->linklist->add($data);
 			}
@@ -111,6 +144,8 @@ class MobileController extends CommonController{
 			    $data['McID']=$Pid;
 				$data['Pid']=$wModelLinkOff[$i];
 			    $data['wModeltype']=2;
+			    $data['MtouchID'] = $touch ? $touch : '0';
+			    $data['StouchID'] = $arr2[$wModelLinkOff[$i]] ? $arr2[$wModelLinkOff[$i]] : '0';
 				$this->linklist->create();
 				$this->linklist->add($data);
 			}
@@ -118,6 +153,8 @@ class MobileController extends CommonController{
 			    $data['McID']=$Pid;
 				$data['Pid']=$wModelLinkOn_Off[$i];
 			    $data['wModeltype']=3;
+			    $data['MtouchID'] = $touch ? $touch : '0';
+			    $data['StouchID'] = $arr3[$wModelLinkOn_Off[$i]] ? $arr3[$wModelLinkOn_Off[$i]] : '0';
 				$this->linklist->create();
 				$this->linklist->add($data);
 			}
@@ -125,6 +162,8 @@ class MobileController extends CommonController{
 			    $data['McID']=$Pid;
 				$data['Pid']=$wModelLinkOff_On[$i];
 			    $data['wModeltype']=4;
+			    $data['MtouchID'] = $touch ? $touch : '0';
+			    $data['StouchID'] = $arr4[$wModelLinkOff_On[$i]] ? $arr4[$wModelLinkOff_On[$i]] : '0';
 				$this->linklist->create();
 				$this->linklist->add($data);
 			}

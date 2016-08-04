@@ -7,9 +7,9 @@ class TimeController extends CommonController{
 	
 	public function _initialize(){
 		parent::_initialize();
-		$this->timeaction_head = D("Home/TimeactionHead");
-		$this->mobilemanager = D('Home/Mobilemanager');
-		$this->timeaction = D('Home/Timeaction');
+		$this->timeaction_head = D("TimeactionHead");
+		$this->mobilemanager = D('Mobilemanager');
+		$this->timeaction = D('Timeaction');
 	}
 	
 	public function index(){

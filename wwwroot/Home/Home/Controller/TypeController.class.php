@@ -7,9 +7,9 @@ class TypeController extends CommonController{
 	
 	public function _initialize(){
 		parent::_initialize();
-		$this->modeltype_head = D("Home/Modeltype_head");
-		$this->mobilemanager = D("Home/Mobilemanager");
-		$this->modeltype = D("Home/Modeltype");
+		$this->modeltype_head = D("Modeltype_head");
+		$this->mobilemanager = D("Mobilemanager");
+		$this->modeltype = D("Modeltype");
 	}
 	public function index(){
 		$where['wUseID']=session('wUseID');
