@@ -143,20 +143,13 @@ function aa(){
 						 	   <eq name="k" value="$vo.Pid">
 									  	<div class="stouch">
 												[
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
+													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn1_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
+													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn1_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
+													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn1_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
 												]
 										</div>
 								</eq>
 							</foreach>
-							<!--<div class="stouch">
-									[
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn_{$vo.Pid}[]"  value="1">灯1 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn_{$vo.Pid}[]"  value="2">灯2 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn_{$vo.Pid}[]"  value="3">灯3 &nbsp;</label>
-									]
-							</div>-->
 						  </eq>
 						  </label>
 						</span>
@@ -166,35 +159,30 @@ function aa(){
 				<tr><th></th><td><div class="s_1" style="color:#6eb805">{$Think.lang.Master_Guan}</div></td></tr>
 				<tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
                   <th>{$Think.lang.Linkage}：</th>
-                  <td><volist name="myMobile" id="vo" >
-                  	<eq name="vo.McID1" value="14">
-                  		<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
-					<else/>
-                  	<span class="bbox1"><label><input type="checkbox" name="LinkOff[]" id="LinkOff[]" <foreach name="mLinkOff" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
-					</eq>
+                  <td>
+                  	    <volist name="myMobile" id="vo" >
+						<eq name="vo.McID1" value="14">
+						<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
+						<else/>
+						<span class="bbox1"><label><input  type="checkbox" name="LinkOff[]"  id="LinkOff[]" <foreach name="mLinkOff" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
+						</eq>
 						 <eq name="vo.McID1" value="14">
-						 	<foreach name="findLinkOff_TouchID_merge" item="vt" key="k">
+						 	<foreach name="findLinkOff_TouchID_merge" item="item" key="k">
 						 	   <eq name="k" value="$vo.Pid">
-							  	<div class="stouch">
-										[
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
-										]
-								</div>
+									  	<div class="stouch">
+												[
+													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff2_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
+													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff2_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
+													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff2_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
+												]
+										</div>
 								</eq>
 							</foreach>
-							<!--
-						  	<div class="stouch">
-									[
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff_{$vo.Pid}[]" value="1">灯1 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff_{$vo.Pid}[]" value="2">灯2 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff_{$vo.Pid}[]" value="3">灯3 &nbsp;</label>
-									]
-							</div>
-							-->
 						  </eq>
-					</span></volist></td>
+						  </label>
+						</span>
+				  </volist>
+					</td>
                 </tr>
 				<tr><th></th><td><div class="s_1" style="color:#6eb805">{$Think.lang.Main_opening2}</div></td></tr>
 				<tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
@@ -203,31 +191,22 @@ function aa(){
                   	<eq name="vo.McID1" value="14">
                   		<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
 					<else/>
-                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOn_Off[]" id="LinkOn_Off[]" <foreach name="mLinkOn_Off" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
+                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOn_Off[]" id="LinkOn_Off[]" <foreach name="mLinkOn_Off" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
 					 </eq>
 					 	 <eq name="vo.McID1" value="14">
 					 	 	<foreach name="findLinkOn_Off_TouchID_merge" item="vt" key="k">
 						 	   <eq name="k" value="$vo.Pid">
 							  	<div class="stouch">
 										[
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
+											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff3_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
+											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff3_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
+											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff3_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
 										]
 								</div>
 								</eq>
 							</foreach>
-							<!--
-						  	<div class="stouch">
-									[
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff_{$vo.Pid}[]" value="1">灯1 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff_{$vo.Pid}[]" value="2">灯2 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff_{$vo.Pid}[]" value="3">灯3 &nbsp;</label>
-									]
-							</div>
-							-->
 						  </eq>
-					 </span></volist></td>
+					 </label></span></volist></td>
                 </tr>
                 <tr>
                 <tr><th></th><td><div class="s_1" style="color:#6eb805">{$Think.lang.Main_opening3}</div></td></tr>
@@ -237,31 +216,22 @@ function aa(){
                   	<eq name="vo.McID1" value="14">
                   		<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
 					<else/>
-                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOff_On[]" id="LinkOff_On[]" <foreach name="mLinkOff_On" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
+                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOff_On[]" id="LinkOff_On[]" <foreach name="mLinkOff_On" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
 					 </eq>
 					 	<eq name="vo.McID1" value="14">
 					 		<foreach name="findLinkOff_On_TouchID_merge" item="vt" key="k">
 						 	   <eq name="k" value="$vo.Pid">
 							  	<div class="stouch">
 										[
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
+											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn4_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
+											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn4_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
+											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn4_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
 										]
 								</div>
 								</eq>
 							</foreach>
-							<!--
-						  	<div class="stouch">
-									[
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn_{$vo.Pid}[]" value="1">灯1 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn_{$vo.Pid}[]" value="2">灯2 &nbsp;</label>
-										<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn_{$vo.Pid}[]" value="3">灯3 &nbsp;</label>
-									]
-							</div>
-							-->
 						  </eq>
-					 </span></volist></td>
+					 </label></span></volist></td>
                 </tr>
                 <tr>
                   <th></th>

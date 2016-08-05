@@ -109,21 +109,22 @@ class MobileController extends CommonController{
 			}
 			$this->linklist->where(array('McID' => $Pid))->delete();
 			foreach (I('post.') as $k => $v){
-				if(strpos($k , 'LinkOn_') !== false) {
-					$SLinkOn[] = substr($k, strlen('LinkOn_'));
-					$arr1[substr($k, strlen('LinkOn_'))] = implode($v , ',');
+				if(strpos($k , 'LinkOn1_') !== false) {
+					$SLinkOn[] = substr($k, strlen('LinkOn1_'));
+					$arr1[substr($k, strlen('LinkOn1_'))] = implode($v , ',');
 				}
-				if(strpos($k , 'LinkOff_') !== false) {
-					$LinkOff[] = substr($k, strlen('LinkOff_'));
-					$arr2[substr($k, strlen('LinkOff_'))] = implode($v , ',');
+				if(strpos($k , 'LinkOff2_') !== false) {
+					echo $k.'<br/>';
+					$LinkOff[] = substr($k, strlen('LinkOff2_'));
+					$arr2[substr($k, strlen('LinkOff2_'))] = implode($v , ',');
 				}
-				if(strpos($k , 'LinkOnOff_') !== false) {
-					$LinkOnOff[] = substr($k, strlen('LinkOnOff_'));
-					$arr3[substr($k, strlen('LinkOnOff_'))] = implode($v , ',');
+				if(strpos($k , 'LinkOnOff3_') !== false) {
+					$LinkOnOff[] = substr($k, strlen('LinkOnOff3_'));
+					$arr3[substr($k, strlen('LinkOnOff3_'))] = implode($v , ',');
 				}
-				if(strpos($k , 'LinkOffOn_') !== false) {
-					$LinkOffOn[] = substr($k, strlen('LinkOffOn_'));
-					$arr4[substr($k, strlen('LinkOffOn_'))] = implode($v , ',');
+				if(strpos($k , 'LinkOffOn4_') !== false) {
+					$LinkOffOn[] = substr($k, strlen('LinkOffOn4_'));
+					$arr4[substr($k, strlen('LinkOffOn4_'))] = implode($v , ',');
 				}
 			}
 			$touch = implode($data['touch11'], ',');
@@ -188,15 +189,7 @@ class MobileController extends CommonController{
 				order by  a.`wUseID` ,a.`Item`");
 		foreach ($UserMobile as $k => $v){
 			if(empty($v['wName'])) { $UserMobile[$k]['wName']= 'null';}
-			//$list[] = $v['wUseID'];
 		}
-		/*$list = array_unique($list);
-		foreach ($list as $key => $value){
-			foreach ($UserMobile as $k => $v){
-				if($value == $v['wUseID']){					$arr[$value][] = $v;
-				}
-			}
-		}*/
 		$this->assign('UserMobile' , $UserMobile);
 		$this->display();
 	}
