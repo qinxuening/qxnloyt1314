@@ -68,7 +68,6 @@ function aa(){
 <!--header-->
 <include file="Public:header" />
 <!--end header--> 
-
 <!--main-->
 <div id="wp" class="wp"><link href="__PUBLIC__/user/css/style.css" rel="stylesheet" type="text/css" />
  <div class="contentmanage">
@@ -95,7 +94,6 @@ function aa(){
 				<li class=" subCatalogList "> <a href="__APP__/Time/add/">{$Think.lang.Add_time}</a> </li>
 				<li class=" subCatalogList "> <a href="__APP__/User/useredit/">{$Think.lang.Information}</a> </li>
 				<li class=" subCatalogList "> <a href="__APP__/User/pwd/">{$Think.lang.Change_password}</a> </li>
-				<li class=" subCatalogList "> <a href="__APP__/Mobile/usermobile/">{$Think.lang.UserMobile}</a> </li>
 				<li class=" subCatalogList "> <a href="__APP__/User/out/">{$Think.lang.Exit}</a> </li>
             </ul>
           </div>
@@ -109,129 +107,75 @@ function aa(){
               <thead>
                 <tr>
                   <th><span class="red">*</span><label class="m_label c_label">{$Think.lang.Equipment_position}：</label></th>
-                  <td class="touch1"><input type="text" class="px" datatype="*1-30" nullmsg="{$Think.lang.Equipment_position_n}" sucmsg="{$Think.lang.Crepass}" name="McName" value="{$mobile.McName}" tabindex="1" size="25" maxlength="30"></td>
-					 <notempty name="McID1">
-						<td class="touch">
-							[
-								<input class="rt2" type="checkbox" id="touch1" name="touch11[]" <foreach name="touch" item="vo" ><eq name="vo" value="1">checked</eq></foreach> value="1" datatype="*" nullmsg="请选择要联动的灯"><label for="touch1">灯1 &nbsp;</label>
-								<input class="rt2" type="checkbox" id="touch2" name="touch11[]" <foreach name="touch" item="vo" ><eq name="vo" value="2">checked</eq></foreach> value="2"><label for="touch2">灯2 &nbsp;</label>
-								<input class="rt2" type="checkbox" id="touch3" name="touch11[]" <foreach name="touch" item="vo" ><eq name="vo" value="3">checked</eq></foreach> value="3"><label for="touch3">灯3 &nbsp;</label>
-							]
-						</td>
-					</notempty> 
-				</tr>
+                  <td><input type="text" class="px" datatype="*1-30" nullmsg="{$Think.lang.Equipment_position_n}" sucmsg="{$Think.lang.Crepass}" name="McName" value="{$mobile.McName}" tabindex="1" size="25" maxlength="30">
+                  </td>
+                </tr>
               </thead>
 			  <tbody>
+                
+                
 				 <tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
                   <th>{$Think.lang.SMS}：</th>
                   <td><input type="checkbox" name="IsMsgs" id="IsMsgs" value="" class="px" <eq name="mobile['IsMsg']" value="1">checked</eq>>&nbsp;{$Think.lang.Sms_notification}
 				  <input type="hidden" name="IsMsg" id="IsMsg">  <div class="s_1" style="color:#6eb805">{$Think.lang.Main_opening}</div></td>
-                 </tr>
-				
+                </tr>
 				
 				  <tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
                   <th>{$Think.lang.Linkage_opening}：</th>
                   <td>
-                  	<volist name="myMobile" id="vo" >
-						<eq name="vo.McID1" value="14">
-						<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
-						<else/>
-						<span class="bbox1"><label><input  type="checkbox" name="LinkOn[]"  id="LinkOn[]" <foreach name="mLinkOn" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
-						</eq>
-						 <eq name="vo.McID1" value="14">
-						 	<foreach name="mLinkOn_TouchID_merge" item="item" key="k">
-						 	   <eq name="k" value="$vo.Pid">
-									  	<div class="stouch">
-												[
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn1_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn1_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOn1_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
-												]
-										</div>
-								</eq>
-							</foreach>
-						  </eq>
-						  </label>
+                  	<eq name="McID1" value="14">
+	                  	<span class="bbox1 touch"><label><input type="checkbox" id="Key01" <notempty name="Key01">checked</notempty> class="px">&nbsp;&nbsp;按键1&nbsp;&nbsp;</label>
+							<input type="hidden" name="hkey01" <notempty name="Key01">value="1"</notempty>>
+							<select name="key01">
+							 <option value ="0">无</option>
+							   <volist name="touch" id="vo1" >
+								  <option value ="{$vo1.McID}" <eq name="Key01['Key01']" value="$vo1.McID">selected</eq>>{$vo1.McName}</option>
+							   </volist> 
+							</select>
 						</span>
-				  </volist>
+						<span class="bbox1 touch"><label><input type="checkbox" id="Key02" <notempty name="Key02">checked</notempty> class="px">&nbsp;&nbsp;按键2&nbsp;&nbsp;</label>
+							<input type="hidden" name="hkey02" <notempty name="Key02">value="1"</notempty>>
+							<select name="key02">
+								<option value ="0">无</option>
+							  <volist name="touch" id="vo1" >
+							 	 <option value ="{$vo1.McID}" <eq name="Key02['Key02']"  value="$vo1.McID">selected</eq>>{$vo1.McName}</option>
+							  </volist> 
+							</select>
+						</span>
+						<span class="bbox1 touch"><label><input type="checkbox" id="Key03" <notempty name="Key03">checked</notempty> class="px">&nbsp;&nbsp;按键3&nbsp;&nbsp;</label>
+						 <input type="hidden" name="hkey03" <notempty name="Key03">value="1"</notempty>>
+						 <select name="key03">
+						 	<option value ="0">无</option>
+							  <volist name="touch" id="vo1" >
+								  <option value ="{$vo1.McID}" <eq name="Key03['Key03']" value="$vo1.McID">selected</eq>>{$vo1.McName}</option>
+							  </volist> 
+						 </select>
+						</span>
+						<br><br>
+					</eq>
+                  <volist name="myMobile" id="vo" >
+               	 	   <span class="bbox1"><label><input type="checkbox" name="LinkOn[]" id="LinkOn[]" <foreach name="mLinkOn" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label></span>
+                  </volist>
 				  </td>
                 </tr>
 				<tr><th></th><td><div class="s_1" style="color:#6eb805">{$Think.lang.Master_Guan}</div></td></tr>
 				<tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
                   <th>{$Think.lang.Linkage}：</th>
-                  <td>
-                  	    <volist name="myMobile" id="vo" >
-						<eq name="vo.McID1" value="14">
-						<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
-						<else/>
-						<span class="bbox1"><label><input  type="checkbox" name="LinkOff[]"  id="LinkOff[]" <foreach name="mLinkOff" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
-						</eq>
-						 <eq name="vo.McID1" value="14">
-						 	<foreach name="findLinkOff_TouchID_merge" item="item" key="k">
-						 	   <eq name="k" value="$vo.Pid">
-									  	<div class="stouch">
-												[
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff2_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff2_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-													<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOff2_{$vo.Pid}[]" <foreach name="item" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
-												]
-										</div>
-								</eq>
-							</foreach>
-						  </eq>
-						  </label>
-						</span>
-				  </volist>
-					</td>
+                  <td><volist name="myMobile" id="vo" >
+                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOff[]" id="LinkOff[]" <foreach name="mLinkOff" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label></span></volist></td>
                 </tr>
 				<tr><th></th><td><div class="s_1" style="color:#6eb805">{$Think.lang.Main_opening2}</div></td></tr>
 				<tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
                   <th>{$Think.lang.Anti_linkage}：</th>
                   <td><volist name="myMobile" id="vo" >
-                  	<eq name="vo.McID1" value="14">
-                  		<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
-					<else/>
-                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOn_Off[]" id="LinkOn_Off[]" <foreach name="mLinkOn_Off" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
-					 </eq>
-					 	 <eq name="vo.McID1" value="14">
-					 	 	<foreach name="findLinkOn_Off_TouchID_merge" item="vt" key="k">
-						 	   <eq name="k" value="$vo.Pid">
-							  	<div class="stouch">
-										[
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff3_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff3_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOnOff3_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
-										]
-								</div>
-								</eq>
-							</foreach>
-						  </eq>
-					 </label></span></volist></td>
+                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOn_Off[]" id="LinkOn_Off[]" <foreach name="mLinkOn_Off" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label></span></volist></td>
                 </tr>
                 <tr>
                 <tr><th></th><td><div class="s_1" style="color:#6eb805">{$Think.lang.Main_opening3}</div></td></tr>
 				<tr style="border-top:1px solid #eeeeee;background-color:#fcfcfc; padding:10px 0px">
                   <th>{$Think.lang.Anti_linkage2}：</th>
                   <td><volist name="myMobile" id="vo" >
-                  	<eq name="vo.McID1" value="14">
-                  		<span class="bbox1"><label>&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label>
-					<else/>
-                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOff_On[]" id="LinkOff_On[]" <foreach name="mLinkOff_On" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;
-					 </eq>
-					 	<eq name="vo.McID1" value="14">
-					 		<foreach name="findLinkOff_On_TouchID_merge" item="vt" key="k">
-						 	   <eq name="k" value="$vo.Pid">
-							  	<div class="stouch">
-										[
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn4_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="1">checked</eq></foreach> value="1">灯1 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn4_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="2">checked</eq></foreach> value="2">灯2 &nbsp;</label>
-											<label><input class="ids" type="checkbox" id="{$vo.Pid}[]" name="LinkOffOn4_{$vo.Pid}[]" <foreach name="vt" item="vo1" ><eq name="vo1" value="3">checked</eq></foreach> value="3">灯3 &nbsp;</label>
-										]
-								</div>
-								</eq>
-							</foreach>
-						  </eq>
-					 </label></span></volist></td>
+                  	 <span class="bbox1"><label><input type="checkbox" name="LinkOff_On[]" id="LinkOff_On[]" <foreach name="mLinkOff_On" item="vt"><eq name="vt" value="$vo.Pid">checked</eq></foreach> value="{$vo.Pid}" class="px">&nbsp;&nbsp;{$vo.McName}&nbsp;&nbsp;</label></span></volist></td>
                 </tr>
                 <tr>
                   <th></th>
@@ -255,19 +199,39 @@ function aa(){
 <!--footer-->
 <script src="__PUBLIC__/resource/common/js/Validform.js"></script>
 <script type="text/javascript">
-
-	$(function(){
-	var demo=$(".Machineryfrom").Validform({
-			tiptype:3,
-			label:".m_label",
-			showAllError:false,
-			datatype:{
-				"zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/,
-				"ip":/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
-			},
-			ajaxPost:false
-		});
-	})
+$(function(){
+$("#Key01").click(function(){
+	 if($(this).prop("checked")){
+	 	$("input[name='hkey01']").val('1');
+	 }else{
+	 	$("input[name='hkey01']").val('0');
+	 }
+});
+$("#Key02").click(function(){
+	 if($(this).prop("checked")){
+	 	$("input[name='hkey02']").val('1');
+	 }else{
+	 	$("input[name='hkey02']").val('0');
+	 }
+});
+$("#Key03").click(function(){
+	 if($(this).prop("checked")){
+	 	$("input[name='hkey03']").val('1');
+	 }else{
+	 	$("input[name='hkey03']").val('0');
+	 }
+});
+var demo=$(".Machineryfrom").Validform({
+		tiptype:3,
+		label:".m_label",
+		showAllError:false,
+		datatype:{
+			"zh1-6":/^[\u4E00-\u9FA5\uf900-\ufa2d]{1,6}$/,
+			"ip":/^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
+		},
+		ajaxPost:false
+	});
+})
 </script>
 <include file="Public:footer" />
 <!--end footer--> 

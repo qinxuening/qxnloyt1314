@@ -142,6 +142,7 @@ a.m_btn_blue_s,a.m_btn_blue_l,a.m_btn_orange_l{ color: #fff; text-decoration: no
 }
 /*===============================check修改================================*/
 .bbox1{padding:4px 6px 4px 6px;;border:solid 1px #dadada;margin-right:10px;margin-bottom:10px;border-radius:2px;float:left;}
+.touch{margin-bottom:6px !important;}
 .bbox1 .px{margin-top:-4px;}
 
 span.Validform_loading {
