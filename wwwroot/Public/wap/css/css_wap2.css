@@ -221,9 +221,26 @@ input, button, select, textarea {
 .chengyuan_con .tx2_1{width:400px;padding-left:20px;float:left;background-color:#56aeec;}
 .chengyuan_con .tx3{width:200px;padding-left:20px;float:left;background-color:#63bfff;}
 
+.chengyuan_con .txu1{width:140px;padding-left:20px;float:left;background-color:#56aeec;}
+.chengyuan_con .txu2{width:140px;padding-left:20px;float:left;background-color:#63bfff;}
+
 .chengyuan_con .c2{width:640px;float:left;text-align:left;line-height:60px;font-size:20px;}
 .chengyuan_con .tx4{width:240px;padding-left:20px;float:left;}
 .chengyuan_con .tx4_1{width:400px;padding-left:20px;float:left;}
+.chengyuan_con .txtuser{width:130px;padding-left:20px;float:left;}
+.chengyuan_con .txtuserl{width:170px;padding-left:20px;float:left;}
+.chengyuan_con .txtuser .btn2{
+	padding: 1px 12px;
+    font-size: 20px;
+    height: 34px;
+    float: left;
+    line-height: 34px;
+    border-radius: 8px;
+    color: #ffffff;
+    margin: 15px 20px 0px 0px;
+    text-align: center;
+    background-color: #757575;
+}
 .chengyuan_con .tx5{width:140px;padding-left:20px;float:left;}
 .chengyuan_con .tx6{width:200px;height:60px;padding-left:20px;float:left;}
 .chengyuan_con .tx6 .btn1{/*width:70px;*/ padding: 1px 12px;height:34px;float:left;line-height:34px;border-radius:8px;color:#ffffff;margin:15px 20px 0px 0px;text-align:center;background-color:#2bbbe7; font-size:20px}
@@ -251,6 +268,38 @@ input, button, select, textarea {
 .chengyuan_con .xq_btn{width:50px;height:30px;float:left;margin-right:10px;background-color:#a4a4a4;border-radius:4px;}/*==============================改变================================*/        
 .chengyuan_con .xq_btn_a{width:50px;height:30px;float:left;margin-right:10px;background-color:#2bbbe7;border-radius:4px;}
 
+.chengyuan_con .btnb{width:auto;height:auto;float:left;background: url("images/edshebei_11.jpg") no-repeat 5px 15px;padding-left:30px;padding-right:30px;line-height:50px;color:#999999;font-size:20px;}
+.chengyuan_con .btn4_b{width:auto;height:auto;float:left;background: url("images/edshebei_11a.jpg") no-repeat 5px 15px;padding-left:30px;padding-right:30px;line-height:50px;color:#2bbbe7;font-size:20px;}
+.chengyuan_con .touch{display:block;line-height:50px;margin-right:10px;font-size:20px;}
+.chengyuan_con select{
+	height:30px;
+	line-height:50px;
+	border-radius:4px;
+	border: solid 1px #d0d0d0;
+	margin-bottom:2px;
+	color: #999999;
+	width:70%;
+	font-size:18px;
+	padding:2px 0;
+}
+.chengyuan_con select option{
+	color: #999999;
+	width: 100%;
+    height: 26px;
+	font-size:20px;
+	border-bottom:solid 1px #d0d0d0;
+	padding:2px 0;
+}
+@media screen and (max-width: 639px) {
+	.chengyuan_con select option{
+		font-size:10px;
+	}
+}
+/*@media screen and (max-width: 786px) {
+	.chengyuan_con select option{
+		font-size:20px;
+	}
+}*/
 .chengyuan_con .line1{width:640px;float:left;border-bottom:solid 1px #f3f3f3;margin-top:40px;}
 
 

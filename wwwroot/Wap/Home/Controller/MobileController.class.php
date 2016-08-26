@@ -5,6 +5,7 @@ class MobileController extends CommonController{
 	protected $modeltype;
 	protected $linklist;
 	protected $timeaction;
+	protected $linklist_s;
 	
 	public function _initialize(){
 		parent::_initialize();
@@ -12,6 +13,7 @@ class MobileController extends CommonController{
 		$this->modeltype = D("Home/Modeltype");
 		$this->linklist = D("Home/Linklist");
 		$this->timeaction = D("Home/Timeaction");
+		$this->linklist_s = D("linklist_s");
 	}
 	
 	public function index(){	
@@ -46,7 +48,107 @@ class MobileController extends CommonController{
 		}
 
 	}
-
+	public function edit(){
+		$Pid = intval(I('get.id'));
+		if($this->mobilemanager->CheckPid($Pid)){
+			$where['Pid'] = array('neq', $Pid);
+			$where['wUseID'] = array('eq', session("wUseID"));
+			$list = $this->mobilemanager->where($where)->field('Pid , McName')->order('Item ASC')->select();
+			$find = $this->mobilemanager->where(array("Pid" => $Pid))->field('Pid , McName , IsMsg , left(`McID`,2) as McID1 , McID')->find();
+			$touch = $this->mobilemanager->field('Pid , McID , McName')->where(array('left(`McID`,2)' => 13 ,wUseID => session('wUseID')))->select();
+			if($find){
+				$findLinkOn = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>1))->field('Pid')->select();//联动开
+				$touchon = $this->linklist_s->where(array('Pid' => $Pid , wModeltype=>1))->field('wID , Key01 , Key02 , Key03 ,McID')->select();
+				foreach ($touchon as $key =>$value){
+					if($value['Key01']) $Key01['Key01'] = $value['McID'];
+					if($value['Key02']) $Key02['Key02'] = $value['McID'];
+					if($value['Key03']) $Key03['Key03'] = $value['McID'];
+				}
+				$findLinkOff = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>2))->field('Pid')->select();//联动关
+				$findLinkOn_Off = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>3))->field('Pid')->select();//反联动开
+				$findLinkOff_On = $this->linklist->where(array(McID=>$find['Pid'],wModeltype=>4))->field('Pid')->select();//反联动关
+	
+				$mLinkOn = TarrayToOarray($findLinkOn, 'Pid');
+				$mLinkOff = TarrayToOarray($findLinkOff, 'Pid');
+				$mLinkOn_Off = TarrayToOarray($findLinkOn_Off, 'Pid');
+				$mLinkOff_On = TarrayToOarray($findLinkOff_On, 'Pid');
+	
+				if('14' == $find['McID1']) $this->assign('McID1' , $find['McID1']);
+				$this->assign("mLinkOn",$mLinkOn);
+				$this->assign("mLinkOff",$mLinkOff);
+				$this->assign("mLinkOn_Off",$mLinkOn_Off);
+				$this->assign("mLinkOff_On",$mLinkOff_On);
+				$this->assign('mobile',$find);
+				$this->assign('touch' , $touch);
+				$this->assign("myMobile",$list);
+				$this->assign('my3','btn0_a');
+				$this->assign("Key01",$Key01);
+				$this->assign("Key02",$Key02);
+				$this->assign("Key03",$Key03);
+				$this->display();
+			}else{
+				$this->error(L('S_parameter_e'));
+			}
+		}else{
+			$this->error(L('S_parameter_e'));
+		}
+	}
+	
+	public function update(){
+		$Pid = intval(I('get.id'));
+		if($this->mobilemanager->CheckPid($Pid)){
+			$data = I('post.');
+			$data['wMB'] = session('wMB');
+			if($this->mobilemanager->create($data)){
+				$this->mobilemanager->where(array("Pid" => $Pid, 'wUseID' => session('wUseID')))->save($data);
+			}
+			$this->linklist->where(array('McID' => $Pid))->delete();
+			$wModelLinkOn = I('post.LinkOn', null);
+			$wModelLinkOff = I('post.LinkOff', null);
+			$wModelLinkOn_Off = I('post.LinkOn_Off', null);
+			$wModelLinkOff_On = I('post.LinkOff_On', null);
+			for($i=0;$i<count($wModelLinkOn);$i++){
+				$data['McID']=$Pid;
+				$data['Pid']=$wModelLinkOn[$i];
+				$data['wModeltype']=1;
+				$this->linklist->create();
+				$id = $this->linklist->add($data);
+			}
+			$this->linklist_s->where(array('Pid' =>$Pid ))->delete();
+			if(I("post.key01")&&I("post.hkey01")) $this->linklist_s->data(array('Pid' =>$Pid , 'wModeltype'=>1 , 'McID' => I("post.key01") , Key01 =>1))->add();
+			if(I("post.key02")&&I("post.hkey02")) $this->linklist_s->data(array('Pid' =>$Pid , 'wModeltype'=>1 , 'McID' => I("post.key02") , Key02 =>1))->add();
+			if(I("post.key03")&&I("post.hkey03")) $this->linklist_s->data(array('Pid' =>$Pid , 'wModeltype'=>1 , 'McID' => I("post.key03") , Key03 =>1))->add();
+				
+			for($i=0;$i<count($wModelLinkOff);$i++){
+				$data['McID']=$Pid;
+				$data['Pid']=$wModelLinkOff[$i];
+				$data['wModeltype']=2;
+				$this->linklist->create();
+				$this->linklist->add($data);
+			}
+			for($i=0;$i<count($wModelLinkOn_Off);$i++){
+				$data['McID']=$Pid;
+				$data['Pid']=$wModelLinkOn_Off[$i];
+				$data['wModeltype']=3;
+				$this->linklist->create();
+				$this->linklist->add($data);
+			}
+			for($i=0;$i<count($wModelLinkOff_On);$i++){
+				$data['McID']=$Pid;
+				$data['Pid']=$wModelLinkOff_On[$i];
+				$data['wModeltype']=4;
+				$this->linklist->create();
+				$this->linklist->add($data);
+			}
+			$url = 'http://'.$_SERVER['HTTP_HOST'].__APP__.'/Mobile/';
+			header("Location:$url");
+	
+		}else{
+			$this->error(L('S_parameter_e'));
+		}
+	}
+	
+	/*
 	public function edit(){
  		$Pid = intval(I('get.id'));
  		if($this->mobilemanager->CheckPid($Pid)){
@@ -79,9 +181,9 @@ class MobileController extends CommonController{
  		}else{
  			$this->error(L('S_parameter_e'));
  		}
-	}
+	}*/
 
-	public function update(){		
+	/*public function update(){		
 		$Pid = intval(I('get.id'));
 		if($this->mobilemanager->CheckPid($Pid)){
 			$data = I('post.');
@@ -128,7 +230,7 @@ class MobileController extends CommonController{
 		}else{
 			$this->error(L('S_parameter_e'));
 		}
-	}
+	}*/
 	
 	public function usermobile(){
 		$wUseID=session('wUseID');
